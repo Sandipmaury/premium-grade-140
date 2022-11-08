@@ -4,17 +4,26 @@ Project original website- https://www.kindmeal.my/
 
 > KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments. I've made the clone website of kindmeal.my . I've created Home page , Signup page , Login page and Kindmeal products page
 
-## Built With
+## Teck Stacks
 
-- React.js
+- NodeJS
+- React
 - Chakra UI
+- Redux
+- React-router-dom
+- React-redux
+- Redux-thunk
+- Vercel
+- MVC
 - Express
-- Mongo DB
-- Heroku
+- Bcrypt
+- Json-web-token
+- MongoDB
+- Render
 
 ## Live Demo
 
-[Vercel link available here](https://premium-grade-140.vercel.app/)
+[![deployed link](https://img.shields.io/badge/Deployed_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://premium-grade-140.vercel.app/)
 
 ## 🔗 Collaborators Profile Links
 
