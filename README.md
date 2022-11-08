@@ -1,8 +1,6 @@
-# Kindmeal
+# Saasa meal
 
-Project original website- https://www.kindmeal.my/
-
-> KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments. We are cloning this website.
+> Saasa meal is a meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments. We are working on this website.
 
 ## Teck Stacks
 
@@ -14,16 +12,14 @@ Project original website- https://www.kindmeal.my/
 - React-redux
 - Redux-thunk
 - Vercel
-- MVC
-- Express
-- Bcrypt
-- Json-web-token
-- MongoDB
-- Render
 
 ## Live Demo
 
 [![deployed link](https://img.shields.io/badge/Deployed_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://premium-grade-140.vercel.app/)
+
+## Backend Repo
+
+[![Backend repo](https://img.shields.io/badge/Backend_repo_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Sandipmaury/premium-grade-140-backend)
 
 ## 🔗 Collaborators Profile Links
 
