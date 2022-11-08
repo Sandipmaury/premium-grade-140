@@ -19,7 +19,7 @@
 
 ## Backend Repo
 
-[![Backend repo](https://img.shields.io/badge/Deployed_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Sandipmaury/premium-grade-140-backend)
+[![Backend repo](https://img.shields.io/badge/Backend_repo_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Sandipmaury/premium-grade-140-backend)
 
 ## 🔗 Collaborators Profile Links
 
