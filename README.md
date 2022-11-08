@@ -2,7 +2,7 @@
 
 Project original website- https://www.kindmeal.my/
 
-> KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments. I've made the clone website of kindmeal.my . I've created Home page , Signup page , Login page and Kindmeal products page
+> KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you with delicious discounted vegetarian meals at cozy environments. We are cloning this website.
 
 ## Teck Stacks
 
