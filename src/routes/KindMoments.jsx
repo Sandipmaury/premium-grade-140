@@ -1,10 +1,52 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Box, Button, Image } from '@chakra-ui/react'
 import { SimpleGrid } from '@chakra-ui/react'
 import { Flex, Spacer ,Text } from '@chakra-ui/react'
+import { ImageSlide } from 'react-chakra-slide-show'
 import {FaHeart } from "react-icons/fa";
+import  { useMemo } from 'react'
+import { ThemeContext } from '@emotion/react'
+
+
+
+
+
+var image_slide = new Array(
+    "https://www.kindmeal.my/photos/moment/24/24585-47621-m.jpg" ,
+    "https://www.kindmeal.my/photos/moment/24/24550-47503-l.jpg",
+  "https://www.kindmeal.my/photos/moment/24/24550-47504-l.jpg",
+"https://www.kindmeal.my/photos/moment/24/24550-47504-l.jpg",
+"https://www.kindmeal.my/photos/moment/24/24550-47507-l.jpg",
+);
+
+var image_length = image_slide.length;
+var image_current = 0;
+
+function slide () {
+ if (image_current == image_length){
+  image_current = 0;
+ } else {
+  image_current++;
+ }
+ document.slideshow.src = image_slide[image_current];
+}
+
+function auto () {
+    console.log("inside set interval")
+ setInterval(slide, 2000);
+}
+
+
+
+
+
+
 
 const KindMoments = () => {
+    window.onload = function(){
+        slide(); // To show the 1st image
+        auto(); // Initialize the slider
+       }
 
   return (
    <Box w={"100%"} h={"100%"}  border="5px solid black" padding={"2%"}>
@@ -18,6 +60,8 @@ const KindMoments = () => {
          borderRadius={"50%"} w={"15%"} h={"15%"}
           alt="img-1">
          </Image>
+        {/* <Image className='slideShow' src="" /> */}
+      
 
          <Flex flexFlow={"column"}>
         <Text >CindyChang</Text>
@@ -26,10 +70,16 @@ const KindMoments = () => {
 
         <Button colorScheme={"red"}>View</Button>
          </Flex>
-         <Image src="https://www.kindmeal.my/photos/moment/24/24585-47621-m.jpg" 
+           
+         <div id="slider" style={{ overflow:"hidden"}}>
+            <img name="slideshow" style={{ overflow:"200px"}} />
+        </div>
+
+        
+         {/* <Image src="https://www.kindmeal.my/photos/moment/24/24585-47621-m.jpg" 
           w={"100%"} h={"40%"}
           alt="img-2">
-         </Image>
+         </Image> */}
          
          <Flex flexFlow={"row"} pl="17%"  gap={"13%"} alignItems={"center"}>
         {/* < FaHeart opacity={"0.4"} /> 0  */}
