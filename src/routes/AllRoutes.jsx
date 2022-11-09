@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MealDeals from "../pages/meal_deals/MealDeals";
+import MealDeals from "../routes/meal_deals/MealDeals";
 import { HomePage } from "./HomePage";
 
 export const AllRoutes = () => {
