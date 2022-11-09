@@ -1,0 +1,206 @@
+.head_section{
+    min-width: 1200px;
+    height: 15rem;
+    background-color: whitesmoke;
+}
+.head_section .head_text{
+    width: 1100px;
+    margin: auto;
+    text-align: left;
+}
+
+.head_section .head_text>h1{
+    font-size: 2rem;
+}
+
+.head_section .searching_div{
+    width: 1100px;
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.head_section .input{
+    width: 23%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 4px;
+    padding: 0.4rem;
+    
+}
+.head_section .all_categories{
+    width: 16%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     border-radius: 4px;
+    padding: 0.4rem;
+
+}
+.head_section .all_location{
+    width: 17%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     border-radius: 4px;
+    padding: 0.4rem;
+
+}
+.head_section .search_deals{
+    width: 17%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     border-radius: 4px;
+    padding: 0.4rem;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+
+}
+.head_section .search_deals:hover{
+    background-color: rgb(122, 7, 7);
+    cursor: pointer;
+}
+.head_section .browse_restaurants{
+    width: 17%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     border-radius: 4px;
+    padding: 0.4rem;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+
+}
+.head_section .browse_restaurants:hover{
+    background-color: rgb(3, 71, 3);
+    cursor: pointer;
+}
+.arrow{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    transform: rotate(45deg);
+    margin-top: -0.8rem;
+
+}
+.cover_arrow{
+    background-color: whitesmoke;
+    width: 1.7rem;
+    height: 1.7rem;
+}
+.top_banner{
+    width: 1100px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: auto;
+    margin: 2rem auto;
+}
+
+.pagination{
+
+    width: 1100px;
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem auto;
+    
+}
+.pageNumber{
+    width: 20%;
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+}
+ .pagination .button{
+    width: 22%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.pagination .button .nextButton{
+    background-color: whitesmoke;
+    padding: 0.4rem 1.9rem 0.4rem 1.9rem;
+    border-radius: 0.5rem;
+}
+
+.pagination .button .prevButton{
+    background-color: whitesmoke;
+    padding: 0.4rem 1.9rem 0.4rem 1.9rem;
+    border-radius: 0.5rem;
+}
+.mealCart{
+    object-fit: cover;
+    padding: 0px;
+}
+.mealCart .images .img{
+    border-radius: 10px;
+}
+.mealCart .title{
+    margin-top: -10px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    z-index: 10;
+    left: 0;
+    top: 260px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.couponButton{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.heading{
+    padding: 1rem;
+}
+.couponButton .free_coupon{
+    background-color: rgb(233, 22, 22);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+}
+.couponButton .free_coupon:hover{
+    background-color: rgb(153, 10, 10);
+    cursor: pointer;
+}
+
+.couponButton .stars{
+    display: flex;
+    align-items: center;
+}
+.hr{
+    width: 100%;
+    color: rgba(0,0,0,0.1);
+}
+.discount_section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+
+.contains{
+    display: flex;
+    height: 2.6rem;
+    gap: 3px;
+}
+.discount{
+    height: 2rem;
+    text-align: center;
+}
+.discount h2{
+    color: red;
+    font-weight: bold;
+
+}
+.expires{
+    height: 2rem;
+    text-align: center;
+}
+
+.percentof{
+    
+}
