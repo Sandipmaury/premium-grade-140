@@ -1,0 +1,10 @@
+.homediv{
+    /* border:1px solid black; */
+    width:1100px;
+    margin:auto;
+    min-width: 300px;
+    
+}
+body{
+    background-color: #ffffff;
+}
