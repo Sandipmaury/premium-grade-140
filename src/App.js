@@ -9,6 +9,7 @@ export default function App() {
     <Box w="100%">
       <Nav/>
       <AllRoutes />
+      
     </Box>
   );
 }
