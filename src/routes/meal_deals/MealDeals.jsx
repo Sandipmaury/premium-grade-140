@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import styles from "./MealDeals.module.css";
 import MealList from "./MealList";
+import Pagination from "./Pagination";
 const MealDeals = () => {
   return (
     <MealDealsWraper>
@@ -93,25 +94,15 @@ const MealDeals = () => {
         />
       </div>
       <div className={styles.pagination}>
-        <div className={styles.pageNumber}>
-          <p>Page</p>
-          <p>:</p>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>7</button>
-        </div>
-        <div className={styles.button}>
-          <button className={styles.prevButton}>Prev</button>
-          <button className={styles.nextButton}>Next</button>
-        </div>
+       <Pagination/>
       </div>
       <MealsListWraper>
         <MealList />
       </MealsListWraper>
+      <div className={styles.pagination}>
+       <Pagination/>
+      </div>
+
     </MealDealsWraper>
   );
 };
@@ -119,6 +110,7 @@ const MealDeals = () => {
 const MealDealsWraper = styled.div`
   width: 100%;
   height: auto;
+  
 `;
 
 const MealsListWraper = styled.div`
@@ -126,7 +118,7 @@ const MealsListWraper = styled.div`
   display: flex;
   margin:auto;
   justify-content:space-between;
-  
+
 `;
 
 export default MealDeals;
