@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button, Image } from '@chakra-ui/react'
 import { SimpleGrid } from '@chakra-ui/react'
-import { Flex, Spacer ,Text } from '@chakra-ui/react'
+import { Flex, Slider ,Text } from '@chakra-ui/react'
 import {FaHeart } from "react-icons/fa";
 
 const KindMoments = () => {
