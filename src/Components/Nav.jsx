@@ -1,8 +1,11 @@
 import React from 'react'
 import stylenav from "./Nav.module.css"
 import NavLogo from "../Assets/logo/logo.jpeg"
+import { Navigate } from 'react-router-dom/dist/umd/react-router-dom.development'
+import { useNavigate } from 'react-router-dom'
 
 export const Nav = () => {
+  const navigate=useNavigate()
   return (
     <div className={stylenav.navbar}>
            {/* 1st nav  */}
@@ -25,7 +28,7 @@ export const Nav = () => {
             <div className={stylenav.logdiv}>Login</div>
             <div className={stylenav.fbicon}>Facebook</div>
             <div className={stylenav.emaildiv}>Email</div>
-            <div className={stylenav.signupdiv}>Sign up</div>
+            <div className={stylenav.signupdiv} onClick={()=>{navigate('/signup')}}>Sign up</div>
         </div>
 
        </div>
