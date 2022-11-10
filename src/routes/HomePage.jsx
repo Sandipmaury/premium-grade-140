@@ -1,8 +1,8 @@
 import { Flex, Box, Image ,Text} from "@chakra-ui/react";
 import React from "react";
-import homestyle from "./HomePage.module.css";
-import Carousel from "./Slider";
-import Carousel1 from "./Slider2";
+import homestyle from "./HomePage.module.css"
+import Carousel from "../Components/Slider";
+import Carousel1 from "../Components/Slider2";
 
 export const HomePage = () => {
   return (
@@ -91,7 +91,7 @@ export const HomePage = () => {
           
         <Box width={"200px"} height={"200px"} opacity={"1"} >
          <a href=""> <Image borderRadius={"4px"} src="https://scontent-xsp1-2.xx.fbcdn.net/v/t15.5256-10/298969854_601112454850438_5265806124209675410_n.jpg?stp=dst-jpg_p720x720&_nc_cat=109&ccb=1-7&_nc_sid=ad6a45&_nc_ohc=nzSzw7XQGnMAX8O4FOs&_nc_ht=scontent-xsp1-2.xx&edm=ALdPpPkEAAAA&oh=00_AfDiYqjrji0ruViM62MPkODSnrKacA8ZbjeDdr9qCoRrGw&oe=6370D918" /></a> 
-       <Text>Mama And Baby Elephant Get Stuck In & Foot Hole</Text>
+       <Text color={"#888888"} fontSize={"12px"} >Mama And Baby Elephant Get Stuck In & Foot Hole</Text>
         </Box>
 
         <Box width={"200px"} height={"200px"} opacity={"1"} >
