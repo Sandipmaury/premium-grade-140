@@ -1,0 +1,198 @@
+.navbar{
+    display: block;
+    width:100%;
+    margin:auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+.nav1{
+    /* border:1px solid black; */
+    height:90px;
+    width:1100px;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+ /* icons nav */
+.imgicons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:150px;
+    /* border:2px solid green; */
+}
+ .imgicons>img{
+    height:40px;
+    width:40px;
+ }
+
+
+ /* logo */
+ .logoimg{
+    width:360px;
+    /* border:1px solid red; */
+ }
+
+ /* logindiv */
+
+ .logindiv{
+    /* border:1px solid brown; */
+    width:290px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ 
+ .fbicon{
+    /* border:1px solid red; */
+    width:80px;
+    height:25px;
+    background-color: #35619f;
+    font-weight: bold;
+   justify-content: center;
+    border-radius: 5px;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #ffffff;
+    padding: 2px 2px 2px 2px;
+    display: flex;
+    align-items: center;
+ }
+
+ .emaildiv{
+    width:80px;
+    height:25px;
+    background-color: #666666;
+    font-weight: bold;
+   justify-content: center;
+    border-radius: 5px;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #ffffff;
+    padding: 2px 2px 2px 2px;
+    display: flex;
+    align-items: center;
+ }
+
+ .signupdiv{
+    border:1px solid silver;
+    font-size: 12px;
+    color: #444444;
+    width:53px;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+ }
+
+ .logdiv{
+    /* border:1px solid silver; */
+    font-size: 12px;
+    color: #444444;
+    width:53px;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ } 
+
+
+
+                  /* nav2 */
+
+.nav2{
+    /* border:1px solid blue; */
+    height:40px;
+    width:100%;
+    background-color:#229760;
+  
+}                  
+.homedivnav{
+    display: flex;
+    /* border:1px solid red; */
+    width:1100px;
+    height:40px;
+    margin:auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #ffffff;
+    text-shadow: none;
+    cursor: pointer;
+}
+           
+             /* media queries */
+
+@media screen and (max-width: 640px){
+    .nav2{
+        border:1px solid blue;
+        height:40px;
+        width:100%;
+        background-color:#229760;
+      
+    }  
+
+    .homedivnav{
+        display: flex;
+        /* border:1px solid red; */
+        max-width:1100px;
+        width:100%;
+        font-size: 14px;
+        
+    }
+      
+    .nav1{
+        border:1px solid black;
+        max-width:1100px;
+        width:100%;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .logindiv{
+        /* border:1px solid brown; */
+        width:230px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+     }
+     .logoimg{
+        width:220px;
+        /* border:1px solid red; */
+        display: flex;
+        align-items: center;
+     }
+     .emaildiv{
+        width:50px;
+        height:25px;
+        font-weight: normal;
+      }
+
+      
+ .fbicon{
+    /* border:1px solid red; */
+    width:50px;
+    font-weight: normal;
+    font-size: 10px;
+   
+ }
+ .navbar{
+   display: block;
+   max-width: 1100px;
+   width:100%;
+   margin:auto;
+
+}
+
+}           
