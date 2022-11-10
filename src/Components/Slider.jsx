@@ -1,7 +1,5 @@
 import React from 'react';
 import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
-// Here we have used react-icons package for the icons
-// And react-slick as our Carousel Lib
 import Slider from 'react-slick';
 
 // Settings for the slider
