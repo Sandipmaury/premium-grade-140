@@ -1,0 +1,53 @@
+
+
+.restaurentName{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    padding: 10px;
+    bottom: 0;
+    background-color: #ffffff7d;
+}
+.menuTab{
+    display: flex;
+    max-width: 80%;
+    position: absolute;
+    z-index: 20;
+    align-items: flex-end;
+    border: 1px solid black;
+    justify-content: space-between;
+    gap: 1rem;
+    margin:  auto;
+
+   
+}
+.menuTab .images{
+    
+}
+.tabs{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border: 1px solid black;
+    width: 40rem;
+  
+}
+ .socials{
+    border: 1px solid black;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+} 
+
+.twiter{
+    display: flex;
+}
+.share{
+    background-color: blue;
+    color: white;
+}
+
+.like{
+    display: flex;
+} 

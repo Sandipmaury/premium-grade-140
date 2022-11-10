@@ -3,7 +3,6 @@ import styled from "styled-components";
 import styles from "./MealDeals.module.css";
 import MealList from "./MealList";
 import Pagination from "./Pagination";
-import { devices } from "./device";
 const MealDeals = () => {
   return (
     <MealDealsWraper>
@@ -119,12 +118,6 @@ const MealsListWraper = styled.div`
   display: flex;
   margin:auto;
   justify-content:space-between;
-
-  @media (max-width:425px){
-    display:block;
-    
-  }
-
 
 `;
 

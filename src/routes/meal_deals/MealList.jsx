@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import MealDealsCart from './MealDealsCart';
 import { data } from "./mealsData";
-import {devices} from "./device"
+
 
 const MealList = () => {
   return (
@@ -10,7 +11,9 @@ const MealList = () => {
           {data.map((ele, index) => {
           return (
             <MealsCart key={index}>
-              <MealDealsCart ele={ele} />
+              <Link to={``}>
+                 <MealDealsCart ele={ele} />
+              </Link>
             </MealsCart>
           );
         })}
