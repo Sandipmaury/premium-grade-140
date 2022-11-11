@@ -1,23 +1,33 @@
 import { color, SimpleGrid } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from "react";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { Flex, Slider, Text } from "@chakra-ui/react";
 import Pagination from "./Pagination";
 import recipeData from "../recipeData.json";
+import { getRecipe } from "../redux/RecipeReducer/recipe.actions";
 
-const recipe = recipeData.recipes;
-console.log(recipe);
+// const recipe = recipeData.recipes;
+// console.log(recipe);
 
 const Recipe = () => {
   const [page, setPage] = useState(1);
+  const {loading , data } = useSelector(store =>store.recipeReducer)
+  const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getRecipe)
+  },[])
 
   const handleClick = () => {
    
   };
 
   return (
-    <Box w={"100%"} h={"100%"} border="5px solid black" paddingTop={"2%"}>
+    <Box w={"100%"} 
+    h={"100%"}
+    //  border="5px solid black"
+      paddingTop={"2%"}>
       <Box
         h={"100%"}
         pt="5%"
@@ -100,8 +110,9 @@ const Recipe = () => {
           spacing={"8"}
           // border="5px solid purple"
         >
-          {recipe &&
-            recipe.map((item) => (
+          {
+          data &&
+            data.map((item) => (
               <Box
                 key={item.id}
                 borderRadius={"5%"}
