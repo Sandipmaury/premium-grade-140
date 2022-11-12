@@ -5,7 +5,9 @@ const MealDealsCart = ({ ele }) => {
   return (
     <div className={styles.mealCart}>
       <div className={styles.circle_top_parent}>
-        <div className={styles.circle_top}>30</div>
+        <div className={styles.circle_top}>
+          <h1 className={styles.circle_child}>-30%</h1>
+        </div>
       </div>
       <div className={styles.images}>
         <img className={styles.img} src={ele.back} alt="img-1" />
@@ -42,7 +44,7 @@ const MealDealsCart = ({ ele }) => {
               src="https://www.kindmeal.my/images/icon_star_grey.png"
               alt="start-5"
             />
-            <p>(0)</p>
+            <p>{`(${ele.votes})`}</p>
           </div>
         </div>
       </div>

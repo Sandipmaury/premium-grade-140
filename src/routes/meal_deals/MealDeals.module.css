@@ -1,10 +1,10 @@
 .head_section {
-  min-width: 1200px;
+  min-width: 1100px;
   height: 15rem;
   background-color: whitesmoke;
 }
 .head_section .head_text {
-  width: 1100px;
+  max-width: 1100px;
   margin: auto;
   text-align: left;
 }
@@ -14,7 +14,7 @@
 }
 
 .head_section .searching_div {
-  width: 1100px;
+  max-width: 1100px;
   height: 1rem;
   display: flex;
   justify-content: space-between;
@@ -93,7 +93,7 @@
 }
 
 .pagination {
-  width: 1100px;
+  max-width: 1100px;
   height: 1rem;
   display: flex;
   justify-content: space-between;
@@ -130,17 +130,25 @@
  .circle_top_parent{
     position: relative;
     z-index: 10;
-}
-.mealCart .circle_top{
+  }
+  .mealCart .circle_top{
     position: absolute;
     top: 10px;
     left: 16px;
     width: 60px;
     height: 60px;
-    background-color: white;
-    text-align: center;
+    background-color: #ffffffc7;
+    
     border-radius: 50%;
+    
+    
 
+}
+
+.circle_child{
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1.5rem;
 }
 .mealCart .images .img {
   border-radius: 10px;
@@ -219,3 +227,10 @@
 
 .percentof {
 }
+
+
+
+ @media screen and (max-width:425px){
+
+  
+} 

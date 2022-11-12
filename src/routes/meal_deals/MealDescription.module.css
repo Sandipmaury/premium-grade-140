@@ -1,0 +1,117 @@
+.restaurentName {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  padding: 10px;
+  bottom: 0;
+  background-color: #ffffff7d;
+}
+.mainTab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.menuTab {
+  display: flex;
+  width: 80%;
+  position: absolute;
+  z-index: 20;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: -8rem;
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 40rem;
+}
+.tabs img {
+  border: 3px solid white;
+}
+.tabs button:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(150, 148, 148);
+}
+.socials {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.twiter {
+  display: flex;
+  align-items: center;
+  background-color: blue;
+  padding: 0px 10px;
+  color: white;
+  border-radius: 5px;
+  gap: 7px;
+}
+.share {
+  background-color: blue;
+  border-radius: 5px;
+  padding: 0px 10px;
+  color: white;
+}
+
+.like {
+  display: flex;
+  background-color: blue;
+  color: white;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+
+.singleMealBox {
+  height: auto;
+  display: flex;
+  width: 100%;
+  background-color: white;
+}
+.singleMealBox .image {
+  width: 550;
+}
+
+.singleMealBox .discountText {
+  width: 500;
+}
+
+.singleMealBox .pricing {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.singleMealBox .coupon {
+    width: 100%;
+  border: 1px solid rgba(0,0,0,0.1);
+
+}
+.singleMealBox .price{
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 50%;
+}
+.singleMealBox .percentDiscount {
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 50%;
+}
+.descriptionTextBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: white;
+  color: black;
+}
+.descriptionTextBox .details {
+  text-align: left;
+  padding-left: 1rem;
+}
+.descriptionTextBox .location {
+  text-align: left;
+  padding-left: 0.5rem;
+}
