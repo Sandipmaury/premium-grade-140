@@ -7,7 +7,7 @@ export const Footer = () => {
     <div style={{width:"100%", backgroundColor:"#2bb673"}}>
         <Box h={"340px"} w={"100%"} bg={"#2bb673"} >
             {/* 1st div */}
-            <Box w={"1100px"} m={"auto"} h={"260px"}  >
+            <Box w={"1100px"} m={"auto"} h={"260px"} padding={"10px"}  >
                 <Flex h={"100%"} >
                
                <Box w={"20%"} h={"100%"}>
