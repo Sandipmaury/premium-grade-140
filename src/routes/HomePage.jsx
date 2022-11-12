@@ -1,7 +1,5 @@
 import { Flex, Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import homestyle from "./HomePage.module.css";
-import { Link } from "react-router-dom";
 import { CarouselSlider } from "../Components/HomeComponents/CarouselSlider";
 import { TopGrid } from "../Components/HomeComponents/TopGrid";
 import { LatestNews } from "../Components/HomeComponents/LatestNews";
@@ -15,7 +13,7 @@ import { RedButton } from "../Components/HomeComponents/RedButton";
 export const HomePage = () => {
   return (
     <div style={{ backgroundColor: "white", width: "100%" }}>
-      <div style={{ width: "100%", backgroundColor:"rgba(224,224,224,1)", padding:"40px" }}>
+      <div style={{ width: "100%", backgroundColor:"rgba(224,224,224,1)", marginBottom:"40px"}}>
         <div style={{ width: "1100px", margin: "auto" , backgroundColor:"rgba(224,224,224,1)"}}>
           
           <CarouselSlider/>
