@@ -300,18 +300,15 @@ font-size: 26px;
 `
 const Signupdetaildiv=styled.div`
 width : 95%;
-// border : 1px solid red;
 margin : 50px 10px 20px 10px;
 display : flex;
 `
 const Detailnamediv=styled.div`
 width : 23%;
-// border : 1px solid black;
 padding-left : 10px;
 `
 const Detaildiv =styled.form`
 width : 72%;
-// border-left : 1px solid grey; 
 margin-left : 5%;
 `
 const P=styled.p`

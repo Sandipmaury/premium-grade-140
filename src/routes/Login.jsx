@@ -60,7 +60,7 @@ const Login = () => {
             <Input type={"submit"}/>
         </Form>
         <Bottom>
-            <Link to={"/user/register"} border="none"> <button>Sign up</button></Link>
+            <Link to={"/user/register"} border="none"> <Button style={{color:'orange'}}>Sign up</Button></Link>
            
         </Bottom>
     </LoginDiv>
