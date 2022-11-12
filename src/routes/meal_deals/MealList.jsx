@@ -1,17 +1,26 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { getMealData } from '../../redux/MealDealsReducer/action';
 import MealDealsCart from './MealDealsCart';
-import { data } from "./mealsData";
 
 
 const MealList = () => {
+  const data=useSelector((store)=>store.MealDataReducer.mealData)
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    if(data.length===0){
+      dispatch(getMealData())
+    }
+  },[data.length,dispatch])
   return (
     <>
-          {data.map((ele, index) => {
+          {data.data?.map((ele) => {
           return (
-            <MealsCart key={index}>
-              <Link to={``}>
+            <MealsCart key={ele._id}>
+              <Link to={`/MealDeals/${ele._id}`}>
                  <MealDealsCart ele={ele} />
               </Link>
             </MealsCart>
