@@ -1,34 +1,35 @@
+import axios from "axios"
+import {GET_RECIPE_LOADING,GET_RECIPE_ERROR,GET_RECIPE_SUCCESS} from "./recipe.types";
 
-import {GET_PRODUCTS_LOADING,GET_PRODUCTS_ERROR,GET_PRODUCTS_SUCCESS} from "./recipe.types";
 
-// export const getProducts =() => async (dispatch)=>{
-//    dispatch({ type: GET_PRODUCTS_LOADING})
-//     try{
-//     let response =  await axios.get("http://localhost:8000/products");
-//     dispatch({ type: GET_PRODUCTS_SUCCESS,payload: response.data})
-//     return response.data; // this step can be skipped.
+
+
+export const getRecipe  =(params) => async (dispatch)=>{
+   dispatch({ type: GET_RECIPE_LOADING})
+   const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
+    try{
+    let response =  await axios.get(`https://saasa-meal.onrender.com/recipes`,{
+        headers : {
+             token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZiMzcyYmVjODU2M2IyNmI3MzkxZmYiLCJlbWFpbCI6InNhbmRpcEBnbWFpbC5jb20iLCJpYXQiOjE2NjgyNDg0ODUsImV4cCI6MTY2ODI4NDQ4NX0.f7Dry78zfaRdr27ox5z29uUAGlPYEEEXFvs63aqXpn0"
+        },
+        cancelToken : source.token,
+        params : params 
+    });
+    dispatch({ type: GET_RECIPE_SUCCESS,payload: response.data})
+ 
+    // return response.data.data; 
    
-//     }
-//     catch(e){
-//         dispatch({ type:GET_PRODUCTS_ERROR })
-//     }
-//  };
+    }
+    catch(thrown){
+        if (axios.isCancel(thrown)) {
+            console.log('Request canceled', thrown.message);
+          } else {
+            // handle error
+          }
+        dispatch({ type:GET_RECIPE_ERROR })
+    }
+ };
 
-export const getRecipe =() => async (dispatch)=>{
-    dispatch({ type: GET_PRODUCTS_LOADING})
-   fetch("https://saasa-meal.onrender.com/recipes",{
-    method: "GET",
-        // headers : {
-        //     token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZiMzcyYmVjODU2M2IyNmI3MzkxZmYiLCJlbWFpbCI6InNhbmRpcEBnbWFpbC5jb20iLCJpYXQiOjE2NjgxNDA3NDYsImV4cCI6MTY2ODE3Njc0Nn0.nC3LPcW-QniAmLBDl8CD41lk4y5flde1eK0ODJx0huI",
-        // }
-   })
-   .then((res)=>  res.json())
-   .then((res) =>{
-     console.log(res)
-   dispatch({type:GET_PRODUCTS_SUCCESS, payload : res}) 
-  return res.data
-})
-   .catch((err) =>{
-    dispatch({type:GET_PRODUCTS_ERROR})
-   })
-  };
+

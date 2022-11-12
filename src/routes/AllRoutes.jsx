@@ -22,11 +22,9 @@ export const AllRoutes = () => {
       <Route path="/mealDescription" element={<MealDescription />} />
       <Route path="/MealDeals/:id" element={<MealDescription />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/KindMomemts" element={<KindMoments />} ></Route> 
-       <Route path="/Recipe" element={<Recipe />} ></Route>
-       <Route path="/productPage" element={<ProductPage />} ></Route>
-       <Route path="/username" element={<Username />} ></Route>
-      
+
+      <Route path="/KindMomemts" element={<KindMoments />}></Route>
+      <Route path="/Recipe" element={<Recipe />}></Route>
     </Routes>
   );
 };
