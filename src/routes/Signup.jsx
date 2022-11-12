@@ -251,7 +251,7 @@ export default Signup
 const Container=styled.div`
 `
 const Signupdiv=styled.div`
-width : 80%;
+width : 1100px;
 margin : auto;
 margin-bottom : 100px;
 display : flex;

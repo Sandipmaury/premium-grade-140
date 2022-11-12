@@ -55,12 +55,12 @@ const Login = () => {
 
         </Logo>
         <Form onSubmit={handleSubmit}>
-            <Input type={"email"} name="email" onChange={handleChange} placeholder="email" required></Input>
-            <Input type={"password"} name="password" onChange={handleChange} placeholder="password" required></Input>
+            <Input type={"email"} name="email" onChange={handleChange} placeholder="Email" required></Input>
+            <Input type={"password"} name="password" onChange={handleChange} placeholder="Password" required></Input>
             <Input type={"submit"}/>
         </Form>
         <Bottom>
-            <Link to={"/user/register"} border="none"> Sign up</Link>
+            <Link to={"/user/register"} border="none"> <button>Sign up</button></Link>
            
         </Bottom>
     </LoginDiv>
