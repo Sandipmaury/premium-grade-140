@@ -34,6 +34,7 @@ const Login = () => {
             let data=await res.json();
             console.log(data)
             if(data.success===true){
+                window.localStorage.setItem('Token',data.data.token)
                 navigate('/')
             }
             else{
@@ -49,12 +50,12 @@ const Login = () => {
   return (
     <Container>
     <LoginDiv>
-        <Logo src={"https://www.kindmeal.my/images/logo-kindmeal.png"}>
+        <Logo src={"	http://localhost:3000/static/media/logo.eebab486d12135e36e7f.jpeg"}>
 
         </Logo>
         <Form onSubmit={handleSubmit}>
-            <Input type={"email"} name="email" onChange={handleChange} placeholder="email"></Input>
-            <Input type={"password"} name="password" onChange={handleChange} placeholder="password"></Input>
+            <Input type={"email"} name="email" onChange={handleChange} placeholder="email" required></Input>
+            <Input type={"password"} name="password" onChange={handleChange} placeholder="password" required></Input>
             <Input type={"submit"}/>
         </Form>
         <Bottom>
