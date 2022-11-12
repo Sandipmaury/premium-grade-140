@@ -9,6 +9,7 @@ import { Select } from "@chakra-ui/react";
 
 import { getRecipe } from "../redux/RecipeReducer/recipe.actions";
 import { useSearchParams } from "react-router-dom";
+import { Loding } from "../Components/Loading";
 
 
 const Recipe = () => {
@@ -21,19 +22,15 @@ const Recipe = () => {
 
   const [page, setPage] = useState(initialPage || 1);
   const { data  } = useSelector((store) => store.recipeReducer);
+  const loading  =  useSelector((store) => store.recipeReducer.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRecipe());
+      dispatch(getRecipe());  
   }, []);
 
-  const handleClick = () => {
-    
-  };
-
   function recipeFilter() {
-    console.log("inside reciep Filter","category", category)
-
+   
     const params = {limit:6,page:page }
     if(category){
       params.category = category
@@ -44,7 +41,6 @@ const Recipe = () => {
     setSearchparams(params)
     dispatch(getRecipe(params));
    
-    
   }
 
   return (
@@ -168,52 +164,52 @@ const Recipe = () => {
           p="20px"
           // border="5px solid teal"
         >
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             All catogories
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Appetizers
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Beverages
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Breakfast
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Breads
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Condiments
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Desserts
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Snacks
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Main Dishes
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             
             Salads
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Side Dishes
           </Button>
 
-          <Button colorScheme={"green"} onClick={handleClick}>
+          <Button colorScheme={"green"} >
             Soups
           </Button>
         </SimpleGrid>
@@ -327,8 +323,10 @@ const Recipe = () => {
               </Box>
             ))}
         </SimpleGrid>
+        <Loding isTrue={loading} />
       </Box>
     </Box>
+
   );
 };
 
