@@ -22,7 +22,7 @@ export const ProductPage = () => {
                 <Flex justifyContent={"space-between"}>
                 <Box w={"730px"} h={"800px"} padding={"20px"} border={"1px solid #dddddd"} boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"} borderRadius={"5px"} >
                     <Box>
-                        <Image h={"500px"}  w={"700px"} src="https://scontent-xsp1-2.xx.fbcdn.net/v/t15.5256-10/76771976_523016821685086_154715867442053120_n.jpg?stp=dst-jpg_p720x720&_nc_cat=102&ccb=1-7&_nc_sid=ad6a45&_nc_ohc=9bfxBtn96gsAX_qpYLx&_nc_ht=scontent-xsp1-2.xx&edm=ALdPpPkEAAAA&oh=00_AfCdv_2KfWVjeW_q2JBEh7ghbnD8WHi1gy6toDx35qrZaQ&oe=6374587B"/>
+                        <Image h={"500px"}  w={"700px"} src="https://scontent-xsp1-2.xx.fbcdn.net/v/t15.5256-10/298969854_601112454850438_5265806124209675410_n.jpg?stp=dst-jpg_p720x720&_nc_cat=109&ccb=1-7&_nc_sid=ad6a45&_nc_ohc=nzSzw7XQGnMAX8O4FOs&_nc_ht=scontent-xsp1-2.xx&edm=ALdPpPkEAAAA&oh=00_AfDiYqjrji0ruViM62MPkODSnrKacA8ZbjeDdr9qCoRrGw&oe=6370D918"/>
                     </Box>
 
                     <Box display={"flex"} justifyContent={"space-between"} w={"80px"} m={"auto"} marginTop={"5px"} >
@@ -42,16 +42,27 @@ export const ProductPage = () => {
                  {/* 2nd grid */}
                 <Box w={"280px"} h={"1100px"} padding={"10px"} border={"1px solid #dddddd"} boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"} borderRadius={"5px"} >
                     <Text fontSize={"20px"} color={"#333333"} textAlign={"center"} >More Yummy Articles</Text>
-                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"15px"} border={"1px solid gray"} ></Box>
+                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"15px"} border={"1px solid gray"} >
+                        <Image h={"100%"} w={"100%"} src="https://www.kindmeal.my/photos/article/20/20241-l.jpg" />
+                    </Box>
                     <Text fontSize={"15px"} lineHeight={"20px"} textAlign={"center"} fontWeight={"500"} color={"#666666"} >Don't cave to desperate dairy. There is still time..</Text>
                    
-                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"20px"} border={"1px solid gray"} ></Box>
+                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"20px"} border={"1px solid gray"} >
+                    <Image h={"100%"} w={"100%"} src="https://www.kindmeal.my/photos/article/20/20240-l.jpg" />
+
+                    </Box>
                     <Text fontSize={"15px"} lineHeight={"20px"} textAlign={"center"} fontWeight={"500"} color={"#666666"} >Egyptian Goose Vs. Leopard</Text>
 
-                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"20px"} border={"1px solid gray"} ></Box>
+                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"20px"} border={"1px solid gray"} >
+                    <Image h={"100%"} w={"100%"} src="https://www.kindmeal.my/photos/article/20/20235-l.jpg" />
+
+                    </Box>
                     <Text fontSize={"15px"} lineHeight={"20px"} textAlign={"center"} fontWeight={"500"} color={"#666666"} >Jane Goodall: The 100 Most Influential People Of 2..</Text>
               
-                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"20px"} border={"1px solid gray"} ></Box>
+                    <Box w={"200px"} m={"auto"} h={"200px"} borderRadius={"5px"} marginTop={"20px"} border={"1px solid gray"} >
+                    <Image h={"100%"} w={"100%"} src="https://www.kindmeal.my/photos/article/20/20239-l.jpg" />
+
+                    </Box>
                     <Text fontSize={"15px"} lineHeight={"20px"} textAlign={"center"} fontWeight={"500"} color={"#666666"} >Almond Milk Growth Brings Change For Suppliers - B..</Text>
              
                 </Box>

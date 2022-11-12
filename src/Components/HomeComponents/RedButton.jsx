@@ -14,7 +14,7 @@ export const RedButton = () => {
               borderRadius={"10px"}
               padding={"5px"}
             >
-                <Box color={"white"} fontWeight={"bold"} textAlign={"center"} marginTop={"12px"} lineHeight={"40px"} fontSize={"40px"} >Join KindMeal Now</Box>
+                <Box color={"white"} fontWeight={"bold"} textAlign={"center"} marginTop={"12px"} lineHeight={"40px"} fontSize={"40px"} >Join Saasa Meal Now</Box>
                 <Box color={"white"} textAlign={"center"} marginTop={"12px"} lineHeight={"10px"} fontSize={"16px"} >Your tasty journey begins here</Box>
             </Box>
     </div>

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavLogo from "../Assets/logo/logo.jpeg";
 import { Flex, Box, Image, Link, Text } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Username } from "./username";
+import { getUser } from "../redux/AuthReducer/actions";
+
 
 export const Nav = () => {
   const navbarLinks = [
@@ -38,20 +42,22 @@ export const Nav = () => {
       title: "Help",
     },
   ];
-  return (
 
-    // <div className={stylenav.navbar}>
-    //        {/* 1st nav  */}
-    //    <div className={stylenav.nav1}>
-    //     {/* logo */}
-    //     <div className={stylenav.logoimg}>
-    //         <Link to='/'><img height="20px" width="320px" src={NavLogo} /></Link>
-    //     </div>
+    const isAuth = useSelector((store)=> store.AuthReducer.isAuth)
+   
+  const dispatch=  useDispatch();
+  
+  useEffect(()=>{
+   dispatch(getUser())
+  },[dispatch])
+
+
+  return (
 
   
    <div style={{position:"sticky", top:"0", zIndex:"100"}}>
       <Box w={"100%"} bg={"white"} >
-        <Box w={"1100px"} m={"auto"} h={"90px"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+        <Box w={"1100px"} bg={"white"} m={"auto"} h={"90px"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
 
 
           <Box>
@@ -78,7 +84,8 @@ export const Nav = () => {
             </Flex>
           </Box>
           {/* login */}
-          <Box w={"290px"}>
+          {
+            (!isAuth) ? ( <Box w={"290px"}>
             <Flex justifyContent={"space-between"}>
               <NavLink to="/user/login">
                 {" "}
@@ -111,6 +118,7 @@ export const Nav = () => {
               >
                 Facebook
               </Box>
+              <NavLink to={"/user/login"}>
               <Box
                 w={"80px"}
                 h={"25px"}
@@ -127,6 +135,7 @@ export const Nav = () => {
               >
                 Email
               </Box>
+              </NavLink>
               <NavLink to="/user/register">
                 <Box
                   fontSize={"12px"}
@@ -146,7 +155,16 @@ export const Nav = () => {
                 </Box>
               </NavLink>
             </Flex>
-          </Box>
+          </Box>) :
+
+          <Username />
+          }
+         
+
+
+
+
+
         </Box>
       </Box>
       {/* 2nd nav */}
@@ -188,6 +206,7 @@ export const Nav = () => {
           })}
         </Box>
       </Box>
+
     </div>
   );
 };
