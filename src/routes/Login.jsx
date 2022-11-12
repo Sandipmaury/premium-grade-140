@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import styled from "styled-components"
+import axios from 'axios'
 
 
 const Login = () => {
@@ -34,6 +35,7 @@ const Login = () => {
             let data=await res.json();
             console.log(data)
             if(data.success===true){
+                window.localStorage.setItem('Token',data.data.token)
                 navigate('/')
             }
             else{
@@ -49,16 +51,16 @@ const Login = () => {
   return (
     <Container>
     <LoginDiv>
-        <Logo src={"https://www.kindmeal.my/images/logo-kindmeal.png"}>
+        <Logo src={"	http://localhost:3000/static/media/logo.eebab486d12135e36e7f.jpeg"}>
 
         </Logo>
         <Form onSubmit={handleSubmit}>
-            <Input type={"email"} name="email" onChange={handleChange} placeholder="email"></Input>
-            <Input type={"password"} name="password" onChange={handleChange} placeholder="password"></Input>
+            <Input type={"email"} name="email" onChange={handleChange} placeholder="Email" required></Input>
+            <Input type={"password"} name="password" onChange={handleChange} placeholder="Password" required></Input>
             <Input type={"submit"}/>
         </Form>
         <Bottom>
-            <Link to={"/user/register"} border="none"> Sign up</Link>
+            <Link to={"/user/register"} border="none"> <Button style={{color:'orange'}}>Sign up</Button></Link>
            
         </Bottom>
     </LoginDiv>
