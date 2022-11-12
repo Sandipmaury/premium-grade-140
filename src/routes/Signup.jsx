@@ -6,12 +6,6 @@ import {useNavigate} from 'react-router-dom'
 
 
 
-
-
-
-
-
-
 const Signup = () => {
 
     let navigate = useNavigate();
@@ -361,7 +355,6 @@ const BBannerdiv = styled.div`
   width: 100%;
   height : 240px;
   margin : 0;
-  // border : 1px solid lightgrey;
   padding-top : 40px;
   background-color: #e0e0e0;
 `
@@ -370,8 +363,6 @@ const BBannerimgdiv = styled.div`
   width: 80%;
   height : 100%;
   margin: auto;
-  // border : 1px solid lightgrey;
-  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 const BBannerimg = styled.img`
   width: 100%;

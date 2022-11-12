@@ -7,6 +7,7 @@ import { Footer } from "./routes/Footer";
 export default function App() {
   return (
     <Box w="100%">
+      <Nav/>
       <AllRoutes />
       <Footer/>
     </Box>
