@@ -3,6 +3,7 @@ import stylenav from "./Nav.module.css"
 import NavLogo from "../Assets/logo/logo.jpeg"
 import { Navigate } from 'react-router-dom/dist/umd/react-router-dom.development'
 import { useNavigate } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export const Nav = () => {
   const navigate=useNavigate()
@@ -12,7 +13,7 @@ export const Nav = () => {
        <div className={stylenav.nav1}>
         {/* logo */}
         <div className={stylenav.logoimg}>
-            <img height="20px" width="320px" src={NavLogo} />
+            <Link to='/'><img height="20px" width="320px" src={NavLogo} /></Link>
         </div>
 
         {/* icons */}
@@ -25,10 +26,10 @@ export const Nav = () => {
 
         {/* login */}
         <div className={stylenav.logindiv}>
-            <div className={stylenav.logdiv}>Login</div>
+            <Link to='/user/login'><div className={stylenav.logdiv}>Login</div></Link>
             <div className={stylenav.fbicon}>Facebook</div>
             <div className={stylenav.emaildiv}>Email</div>
-            <div className={stylenav.signupdiv} onClick={()=>{navigate('/signup')}}>Sign up</div>
+            <Link to={'/user/register'}><div className={stylenav.signupdiv}>Sign up</div></Link>
         </div>
 
        </div>
