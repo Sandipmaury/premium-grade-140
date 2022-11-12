@@ -10,15 +10,15 @@ const MealDealsCart = ({ ele }) => {
         </div>
       </div>
       <div className={styles.images}>
-        <img className={styles.img} src={ele.back} alt="img-1" />
+        <img className={styles.img} src={ele.img} alt="img-1" />
       </div>
       <div className={styles.titleParent}>
-        <div className={styles.title}>{ele.name}</div>
+        <div className={styles.title}>{ele.title}</div>
       </div>
       <div className={styles.content}>
         <div className={styles.heading}>
           <h1>
-            {ele.hotel} - <span>{ele.location}</span>
+            {ele.restaurant} - <span>{ele.address}</span>
           </h1>
         </div>
         <div className={styles.couponButton}>
@@ -44,7 +44,7 @@ const MealDealsCart = ({ ele }) => {
               src="https://www.kindmeal.my/images/icon_star_grey.png"
               alt="start-5"
             />
-            <p>{`(${ele.votes})`}</p>
+            <p>{`(${ele.review})`}</p>
           </div>
         </div>
       </div>
