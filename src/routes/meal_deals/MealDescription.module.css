@@ -31,6 +31,8 @@
 }
 .tabs img {
   border: 3px solid white;
+  width: 250px;
+  
 }
 .tabs button:hover {
   text-decoration: underline;
@@ -73,11 +75,34 @@
   background-color: white;
 }
 .singleMealBox .image {
-  width: 550;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .singleMealBox .discountText {
-  width: 500;
+  width: 50%;
+}
+.singleMealBox .discountText .pricing{
+  height: 30vh;
+  margin: auto 0px;
+}
+.singleMealBox .discountText .coupon{
+  height: 30vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleMealBox .discountText .coupon button{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: rgb(126, 126, 240);
+  padding: 0px 1rem ;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
 }
 
 .singleMealBox .pricing {
@@ -88,8 +113,10 @@
   border: 1px solid rgba(0,0,0,0.1);
 }
 .singleMealBox .coupon {
-    width: 100%;
+  width: 100%;
   border: 1px solid rgba(0,0,0,0.1);
+
+
 
 }
 .singleMealBox .price{
