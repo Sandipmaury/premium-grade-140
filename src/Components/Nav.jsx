@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 import { Flex, Box, Image, Text } from "@chakra-ui/react";
-import { Link } from 'react-router-dom'
 
 export const Nav = () => {
   const navigate=useNavigate()
@@ -76,6 +75,8 @@ export const Nav = () => {
      <Box cursor={"pointer"}>Help</Box>
      </Box>
       </Box>
+    </div>
+    </div>
     </div>
   )
 }
