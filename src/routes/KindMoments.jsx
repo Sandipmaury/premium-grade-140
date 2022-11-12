@@ -3,7 +3,7 @@ import { Box, Button, Image } from "@chakra-ui/react";
 import { SimpleGrid } from "@chakra-ui/react";
 import { Flex, Slider, Text } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
-import Pagination from "./Pagination";
+import Pagination from "../Components/Pagination";
 
 
 const KindMoments = () => {

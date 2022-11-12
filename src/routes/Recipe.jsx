@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from "react";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { Flex, Slider, Text } from "@chakra-ui/react";
-import Pagination from "./Pagination";
+import Pagination from "../Components/Pagination";
 import recipeData from "../recipeData.json";
 import { getRecipe } from "../redux/RecipeReducer/recipe.actions";
 
