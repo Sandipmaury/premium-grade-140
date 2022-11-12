@@ -40,7 +40,7 @@ export const Nav = () => {
          <Box w={"290px"} >
           <Flex justifyContent={"space-between"}>
            <Link to='/user/login'> <Box fontSize={"12px"} w={"53px"} h={"25px"} cursor={"pointer"} color={'#444444'} display={"flex"} justifyContent={"center"} alignItems={"center"} >Login</Box></Link>
-            <Box w={"80px"} h={"25px"} bg={"#35619f"} cursor={"pointer"} justifyContent={"center"} borderRadius={"5px"} lineHeight={"20px"}  color={"white"} padding={"2px 2px 2px 2px"} display={"flex"} alignItems={"center"} fontSize={"12px"}>Facebook</Box>
+            <a href='http://facebook.com'><Box w={"80px"} h={"25px"} bg={"#35619f"} cursor={"pointer"} justifyContent={"center"} borderRadius={"5px"} lineHeight={"20px"}  color={"white"} padding={"2px 2px 2px 2px"} display={"flex"} alignItems={"center"} fontSize={"12px"}>Facebook</Box></a>
             <Box w={"80px"} h={"25px"} bg={"#666666"} cursor={"pointer"} justifyContent={"center"} borderRadius={"5px"} lineHeight={"20px"}  color={"white"} padding={"2px 2px 2px 2px"} display={"flex"} alignItems={"center"} fontSize={"12px"}>Email</Box>
             <Link to='/user/register'><Box fontSize={"12px"} w={"53px"} h={"25px"} cursor={"pointer"} border={"1px solid silver"} borderBottom={"none"} borderTop={"none"} borderRight={"none"} color={'#444444'} display={"flex"} justifyContent={"center"} alignItems={"center"} >Sign Up</Box></Link>
 
