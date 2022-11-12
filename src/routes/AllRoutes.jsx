@@ -9,6 +9,7 @@ import Login from "./Login";
 import KindMoments from "./KindMoments";
 import Recipe from "./Recipe";
 import Signup from "./Signup";
+import { ProductPage } from "./ProductPage";
 
 export const AllRoutes = () => {
   return (
@@ -23,7 +24,9 @@ export const AllRoutes = () => {
       <Route path="/mealDescription" element={<MealDescription />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/KindMomemts" element={<KindMoments />} ></Route> 
-       <Route path="/Recipe" element={<Recipe />} ></Route>
+      <Route path="/Recipe" element={<Recipe />} ></Route>
+      <Route path="/productpage" element={<ProductPage />} ></Route>
+       
 
     </Routes>
 

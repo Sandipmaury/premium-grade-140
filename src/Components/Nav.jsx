@@ -10,15 +10,6 @@ export const Nav = () => {
   const navigate=useNavigate()
   return (
 
-    // <div className={stylenav.navbar}>
-    //        {/* 1st nav  */}
-    //    <div className={stylenav.nav1}>
-    //     {/* logo */}
-    //     <div className={stylenav.logoimg}>
-    //         <Link to='/'><img height="20px" width="320px" src={NavLogo} /></Link>
-    //     </div>
-
-  
    <div style={{position:"sticky", top:"0", zIndex:"100"}}>
       <Box w={"100%"} bg={"white"} >
         <Box w={"1100px"} m={"auto"} h={"90px"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
