@@ -1,70 +1,189 @@
-import React from 'react'
-import stylenav from "./Nav.module.css"
-import NavLogo from "../Assets/logo/logo.jpeg"
-import { Navigate } from 'react-router-dom/dist/umd/react-router-dom.development'
-import { useNavigate } from 'react-router-dom'
-import { Flex, Box, Image, Text } from "@chakra-ui/react";
-import {Link} from 'react-router-dom'
+import React from "react";
+import NavLogo from "../Assets/logo/logo.jpeg";
+import { Flex, Box, Image, Link, Text } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 export const Nav = () => {
-  const navigate=useNavigate()
+  const navbarLinks = [
+    {
+      route: "/",
+      title: "Home",
+    },
+    {
+      route: "/MealDeals",
+      title: "Meal Deals",
+    },
+    {
+      route: "/KindMomemts",
+      title: "KindMoments",
+    },
+    {
+      route: "/hotpicks",
+      title: "Hot Picks",
+    },
+    {
+      route: "/Recipe",
+      title: "Recipes",
+    },
+    {
+      route: "/directory",
+      title: "Directory",
+    },
+    {
+      route: "/articles",
+      title: "Articles",
+    },
+    {
+      route: "/help",
+      title: "Help",
+    },
+  ];
   return (
-
-    // <div className={stylenav.navbar}>
-    //        {/* 1st nav  */}
-    //    <div className={stylenav.nav1}>
-    //     {/* logo */}
-    //     <div className={stylenav.logoimg}>
-    //         <Link to='/'><img height="20px" width="320px" src={NavLogo} /></Link>
-    //     </div>
-
-  
-   <div style={{position:"sticky", top:"0", zIndex:"100"}}>
-      <Box w={"100%"} bg={"white"} >
-        <Box w={"1100px"} m={"auto"} h={"90px"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
-
-
+    <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
+      <Box w={"100%"} bg={"white"}>
+        <Box
+          w={"1100px"}
+          m={"auto"}
+          h={"90px"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
           <Box>
-            <Link to='/'><Image h={"80px"} w={"350px"} src={NavLogo} /></Link>
+            <NavLink to="/">
+              <Image h={"80px"} w={"350px"} src={NavLogo} />
+            </NavLink>
           </Box>
-         
-         <Box w={"150px"}>
-          <Flex justifyContent={"space-between"}>
-         <Link> <Image h={"40px"} w={"40px"} src="https://www.kindmeal.my/images/follow_blog_grey.png" /></Link>   
-         <Link><Image h={"40px"} w={"40px"} src="https://www.kindmeal.my/images/follow_facebook_grey.png" /></Link>   
-         <Link><Image h={"40px"} w={"40px"} src="https://www.kindmeal.my/images/follow_twitter_grey.png" /></Link>  
-          </Flex>
-         </Box>
-
-         {/* login */}
-         <Box w={"290px"} >
-          <Flex justifyContent={"space-between"}>
-           <Link to='/user/login'> <Box fontSize={"12px"} w={"53px"} h={"25px"} cursor={"pointer"} color={'#444444'} display={"flex"} justifyContent={"center"} alignItems={"center"} >Login</Box></Link>
-            <Box w={"80px"} h={"25px"} bg={"#35619f"} cursor={"pointer"} justifyContent={"center"} borderRadius={"5px"} lineHeight={"20px"}  color={"white"} padding={"2px 2px 2px 2px"} display={"flex"} alignItems={"center"} fontSize={"12px"}>Facebook</Box>
-            <Box w={"80px"} h={"25px"} bg={"#666666"} cursor={"pointer"} justifyContent={"center"} borderRadius={"5px"} lineHeight={"20px"}  color={"white"} padding={"2px 2px 2px 2px"} display={"flex"} alignItems={"center"} fontSize={"12px"}>Email</Box>
-            <Link to='/user/register'><Box fontSize={"12px"} w={"53px"} h={"25px"} cursor={"pointer"} border={"1px solid silver"} borderBottom={"none"} borderTop={"none"} borderRight={"none"} color={'#444444'} display={"flex"} justifyContent={"center"} alignItems={"center"} >Sign Up</Box></Link>
-
-
-          </Flex>
-         </Box>
+          <Box>
+            <Flex gap="20px">
+              <Link href="https://www.facebook.com/KindMeal.my">
+                <Image
+                  h={"40px"}
+                  w={"40px"}
+                  src="https://www.kindmeal.my/images/follow_facebook_grey.png"
+                />
+              </Link>
+              <Link href="https://twitter.com/KindMeal">
+                <Image
+                  h={"40px"}
+                  w={"40px"}
+                  src="https://www.kindmeal.my/images/follow_twitter_grey.png"
+                />
+              </Link>
+            </Flex>
+          </Box>
+          {/* login */}
+          <Box w={"290px"}>
+            <Flex justifyContent={"space-between"}>
+              <NavLink to="/user/login">
+                {" "}
+                <Box
+                  fontSize={"12px"}
+                  w={"53px"}
+                  h={"25px"}
+                  cursor={"pointer"}
+                  color={"#444444"}
+                  display={"flex"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                >
+                  Login
+                </Box>
+              </NavLink>
+              <Box
+                w={"80px"}
+                h={"25px"}
+                bg={"#35619f"}
+                cursor={"pointer"}
+                justifyContent={"center"}
+                borderRadius={"5px"}
+                lineHeight={"20px"}
+                color={"white"}
+                padding={"2px 2px 2px 2px"}
+                display={"flex"}
+                alignItems={"center"}
+                fontSize={"12px"}
+              >
+                Facebook
+              </Box>
+              <Box
+                w={"80px"}
+                h={"25px"}
+                bg={"#666666"}
+                cursor={"pointer"}
+                justifyContent={"center"}
+                borderRadius={"5px"}
+                lineHeight={"20px"}
+                color={"white"}
+                padding={"2px 2px 2px 2px"}
+                display={"flex"}
+                alignItems={"center"}
+                fontSize={"12px"}
+              >
+                Email
+              </Box>
+              <NavLink to="/user/register">
+                <Box
+                  fontSize={"12px"}
+                  w={"53px"}
+                  h={"25px"}
+                  cursor={"pointer"}
+                  border={"1px solid silver"}
+                  borderBottom={"none"}
+                  borderTop={"none"}
+                  borderRight={"none"}
+                  color={"#444444"}
+                  display={"flex"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                >
+                  Sign Up
+                </Box>
+              </NavLink>
+            </Flex>
+          </Box>
         </Box>
       </Box>
-
-
-
-            {/* 2nd nav */}
-      <Box w={"100%"} bg={"#229760"} h={"40px"}>
-     <Box w={"1100px"} m={"auto"} display={"flex"} justifyContent={"space-between"} fontSize={"18px"} color={"#ffffff"} lineHeight={"40px"} alignItems={"center"} >
-     <Box cursor={"pointer"} >Home</Box>
-     <Box cursor={"pointer"}>Meal Deals</Box>
-     <Box cursor={"pointer"}>KindMoments</Box>
-     <Box cursor={"pointer"}>Hot Picks</Box>
-     <Box cursor={"pointer"}>Recipes</Box>
-     <Box cursor={"pointer"}>Directory</Box>
-     <Box cursor={"pointer"}>Articles</Box>
-     <Box cursor={"pointer"}>Help</Box>
-     </Box>
+      {/* 2nd nav */}
+      <Box w={"100%"} bg={"#2bb673"} h={"40px"}>
+        <Box
+          w={"1100px"}
+          m={"auto"}
+          display={"flex"}
+          justifyContent={"space-between"}
+          fontSize={"18px"}
+          color={"#ffffff"}
+          lineHeight={"40px"}
+          alignItems={"center"}
+          bg={"#2bb673"}
+        >
+          {navbarLinks?.map((el, index) => {
+            return (
+              <NavLink key={index} to={el?.route}>
+                {({ isActive }) =>
+                  isActive ? (
+                    <Text px="5px" bg="#229760">
+                      {el?.title}
+                    </Text>
+                  ) : (
+                    <Text
+                      px="5px"
+                      transition="0.2s"
+                      _hover={{
+                        transition: "0.2s",
+                        backgroundColor: "#229760",
+                      }}
+                    >
+                      {el?.title}
+                    </Text>
+                  )
+                }
+              </NavLink>
+            );
+          })}
+        </Box>
       </Box>
     </div>
-  )
-}
+  );
+};
+
