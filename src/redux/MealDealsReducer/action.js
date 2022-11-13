@@ -5,7 +5,7 @@ const getMealData=(params)=>(dispatch)=>{
     dispatch({type:types.MEAL_DATA_REQUEST})
     return axios.get(`https://saasa-meal.onrender.com/meals`,{
         headers:{
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZkOGE5ODliODk0M2ZiY2U4MmNiYjciLCJlbWFpbCI6ImFAZ21haWwuY29tIiwiaWF0IjoxNjY4MjI5ODgzLCJleHAiOjE2NjgyNjU4ODN9.oSj42Pqorsmqdqi7z4VdfEIo6_BAMO4LuYYYXaWnIQM"
+            token: localStorage.getItem("Token")
         },
         params:params
     }).then((res)=>{

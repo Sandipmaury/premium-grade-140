@@ -50,7 +50,7 @@ const currentMealData=useMealDesc()
       </div>
 
       <DealsMainContainer>
-       <MealDescList/>
+         <MealDescList/>
       </DealsMainContainer>
     </>
   );

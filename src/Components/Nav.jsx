@@ -56,7 +56,7 @@ export const Nav = () => {
       <Box w={"100%"} bg={"#229760"} h={"40px"}>
      <Box w={"1100px"} m={"auto"} display={"flex"} justifyContent={"space-between"} fontSize={"18px"} color={"#ffffff"} lineHeight={"40px"} alignItems={"center"} >
      <Box cursor={"pointer"} >Home</Box>
-     <Box cursor={"pointer"}>Meal Deals</Box>
+     <Box cursor={"pointer"}><Link to="/mealDeals">{"Meal Deals"}</Link></Box>
      <Box cursor={"pointer"}>KindMoments</Box>
      <Box cursor={"pointer"}>Hot Picks</Box>
      <Box cursor={"pointer"}>Recipes</Box>
