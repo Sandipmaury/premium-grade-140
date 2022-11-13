@@ -2,12 +2,18 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Login_Data } from "../redux/AuthReducer/actions";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Loding } from "../Components/Loading";
+import { useEffect } from "react";
 
 const Login = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [LoginData, setLoginData] = useState({});
+  const isAuth = useSelector((store) => store.AuthReducer.isAuth);
+  if (isAuth) {
+    return navigate("/");
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +28,7 @@ const Login = () => {
     dispatch(Login_Data(LoginData))
       .then((res) => {
         if (res.success) {
-            window.localStorage.setItem('Token',res.token)
+          window.localStorage.setItem("Token", res.token);
           navigate("/");
         } else {
           alert("Inavlid Creditendials");
@@ -67,6 +73,7 @@ const Login = () => {
           </Link>
         </Bottom>
       </LoginDiv>
+      <Loding />
     </Container>
   );
 };

@@ -1,8 +1,8 @@
-import {  SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { Box, Button, Image } from "@chakra-ui/react";
-import { Flex,  Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import Pagination from "../Components/Pagination";
 import { Input } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
@@ -10,37 +10,32 @@ import { getRecipe } from "../redux/RecipeReducer/recipe.actions";
 import { useSearchParams } from "react-router-dom";
 import { Loding } from "../Components/Loading";
 
-
 const Recipe = () => {
   const [searchParams, setSearchparams] = useSearchParams("");
   const initialPage = searchParams.get("page");
   const initCat = searchParams.get("category");
   const [category, setCategory] = useState(initCat || "");
-  const initTitle=searchParams.get("title")
-    const [title,setTitle]=useState(initTitle||"")
+  const initTitle = searchParams.get("title");
+  const [title, setTitle] = useState(initTitle || "");
 
   const [page, setPage] = useState(initialPage || 1);
-  const { data  } = useSelector((store) => store.recipeReducer);
+  const { data } = useSelector((store) => store.recipeReducer);
   const dispatch = useDispatch();
-  const params = {limit:6,page:page }
-  
+  const params = { limit: 6, page: page };
 
   useEffect(() => {
-  
-  dispatch(getRecipe(params));  
+    dispatch(getRecipe(params));
   }, []);
 
   function recipeFilter() {
-  
-     if(category){
-      params.category = category
+    if (category) {
+      params.category = category;
     }
-    if(title){
-      params.q=title
+    if (title) {
+      params.q = title;
     }
-    setSearchparams(params)
+    setSearchparams(params);
     dispatch(getRecipe(params));
-
   }
 
   return (
@@ -54,7 +49,6 @@ const Recipe = () => {
         pl={"15%"}
         pr={"15%"}
         m={"auto"}
-       
         h={"100%"}
         backgroundColor={"#f0f0f0"}
         // border="5px solid red"
@@ -76,7 +70,6 @@ const Recipe = () => {
               Food & Drinks
             </Text>
             <Text fontSize={"26px"} color={"#888888"} fontWeight={"700"}>
-              
               |
             </Text>
             <Text
@@ -85,7 +78,6 @@ const Recipe = () => {
               fontWeight={"400"}
               fontFamily={"arial"}
             >
-              
               Yummy Meat-Free Recipes
             </Text>
           </Flex>
@@ -165,59 +157,33 @@ const Recipe = () => {
           p="20px"
           // border="5px solid teal"
         >
-          <Button colorScheme={"green"} >
-            All catogories
-          </Button>
+          <Button colorScheme={"green"}>All catogories</Button>
 
-          <Button colorScheme={"green"} >
-            Appetizers
-          </Button>
+          <Button colorScheme={"green"}>Appetizers</Button>
 
-          <Button colorScheme={"green"} >
-            Beverages
-          </Button>
+          <Button colorScheme={"green"}>Beverages</Button>
 
-          <Button colorScheme={"green"} >
-            Breakfast
-          </Button>
+          <Button colorScheme={"green"}>Breakfast</Button>
 
-          <Button colorScheme={"green"} >
-            Breads
-          </Button>
+          <Button colorScheme={"green"}>Breads</Button>
 
-          <Button colorScheme={"green"} >
-            Condiments
-          </Button>
+          <Button colorScheme={"green"}>Condiments</Button>
 
-          <Button colorScheme={"green"} >
-            Desserts
-          </Button>
+          <Button colorScheme={"green"}>Desserts</Button>
 
-          <Button colorScheme={"green"} >
-            Snacks
-          </Button>
+          <Button colorScheme={"green"}>Snacks</Button>
 
-          <Button colorScheme={"green"} >
-            Main Dishes
-          </Button>
+          <Button colorScheme={"green"}>Main Dishes</Button>
 
-          <Button colorScheme={"green"} >
-            
-            Salads
-          </Button>
+          <Button colorScheme={"green"}>Salads</Button>
 
-          <Button colorScheme={"green"} >
-            Side Dishes
-          </Button>
+          <Button colorScheme={"green"}>Side Dishes</Button>
 
-          <Button colorScheme={"green"} >
-            Soups
-          </Button>
+          <Button colorScheme={"green"}>Soups</Button>
         </SimpleGrid>
 
         <Box m={"20px"} p={"10px"}>
-          <Pagination>  
-          </Pagination>
+          <Pagination></Pagination>
         </Box>
 
         <SimpleGrid
@@ -320,7 +286,6 @@ const Recipe = () => {
         <Loding />
       </Box>
     </Box>
-
   );
 };
 
