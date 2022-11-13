@@ -2,12 +2,18 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Login_Data } from "../redux/AuthReducer/actions";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Loding } from "../Components/Loading";
+import { useEffect } from "react";
 
 const Login = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [LoginData, setLoginData] = useState({});
+  const isAuth = useSelector((store) => store.AuthReducer.isAuth);
+  if (isAuth) {
+    return navigate("/");
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +28,7 @@ const Login = () => {
     dispatch(Login_Data(LoginData))
       .then((res) => {
         if (res.success) {
-            window.localStorage.setItem('Token',res.token)
+          window.localStorage.setItem("Token", res.token);
           navigate("/");
         } else {
           alert("Inavlid Creditendials");
@@ -38,12 +44,12 @@ const Login = () => {
     <Container>
       <LoginDiv>
         <Logo
-          src={
-            "http://localhost:3000/static/media/logo.eebab486d12135e36e7f.jpeg"
-          }
+          src=
+            "https://raw.githubusercontent.com/ayushanshu001/shrewd-drink-6002/main/WhatsApp%20Image%202022-11-09%20at%2013.06.04.jpeg"
+          
         ></Logo>
         <Form onSubmit={handleSubmit}>
-          <Input
+          <Input style={{border:'2px solid green'}}
             type={"email"}
             name="email"
             onChange={handleChange}
@@ -51,6 +57,7 @@ const Login = () => {
             required
           ></Input>
           <Input
+          style={{border:'2px solid green'}}
             type={"password"}
             name="password"
             onChange={handleChange}
@@ -66,6 +73,7 @@ const Login = () => {
           </Link>
         </Bottom>
       </LoginDiv>
+      <Loding />
     </Container>
   );
 };
