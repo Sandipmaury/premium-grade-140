@@ -13,7 +13,7 @@ import { RedButton } from "../Components/HomeComponents/RedButton";
 export const HomePage = () => {
   return (
     <div style={{ backgroundColor: "white", width: "100%" }}>
-      <div style={{ width: "100%", backgroundColor:"rgba(224,224,224,1)", marginBottom:"40px"}}>
+      <div style={{ width: "100%", backgroundColor:"rgba(224,224,224,1)", paddingBottom:"60px"}}>
         <div style={{ width: "1100px", margin: "auto" , backgroundColor:"rgba(224,224,224,1)"}}>
           
           <CarouselSlider/>
