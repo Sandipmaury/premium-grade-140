@@ -21,7 +21,6 @@ const Login = () => {
     e.preventDefault();
     dispatch(Login_Data(LoginData))
       .then((res) => {
-        console.log(res)
         if (res.success) {
             window.localStorage.setItem('Token',res.token)
           navigate("/");

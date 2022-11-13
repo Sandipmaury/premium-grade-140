@@ -232,6 +232,7 @@ const Signup = () => {
             </BBannerimgdiv>
           </BBannerdiv>
   </Container>
+
   )
 }
 
