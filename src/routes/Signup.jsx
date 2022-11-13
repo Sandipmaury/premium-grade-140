@@ -1,66 +1,58 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components"
 import { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
-
-
-
+import {Navigate, useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { SignupData } from '../redux/AuthReducer/actions'
 
 const Signup = () => {
+    const navigate=useNavigate()
+ const dispatch = useDispatch();
 
-    let navigate = useNavigate();
-    const [formData,setFormData]=useState({
-        name:"",
-        email:"",
-        password:"",
-        username:"",
-        birth:"",
-        country:"",
-        state:"",
-        gender:"",
+    const initstate={
+            name:"",
+            email:"",
+            password:"",
+            username:"",
+            birth:"",
+            country:"",
+            state:"",
+            gender:"",
+            success:false
+    }
 
-    })
+    const [post,setPost]=useState(initstate)
 
 
 
     const handleChange=(e)=>{
         const {name,value}=e.target;
-        setFormData({
-            ...formData,
+        setPost({
+            ...post,
             [name]: value
         })
 
     }
 
-
-
-    const handleSubmit=async(e)=>{
+    const handleSubmit=(e)=>{
         e.preventDefault()
-        try {
-           let res=await fetch("https://saasa-meal.onrender.com/user/register",{
-            method:'POST',
-            body:JSON.stringify(formData),
-            headers:{
-                "Content-Type":"application/json",
-            }
-            })
-            let data=await res.json()
-            console.log(data)
-            if(data.success==true){
-                navigate('/user/login')
-            }
-            else if(!data.success){
-                alert('Email already exits, Please login with other Email ID')
-            }
 
-        } catch (error) {
-            console.log(error)
-        }
+        dispatch(SignupData(post)).then((res)=>{
+            if(res){
+                navigate('/user/login')
+            }else{
+                alert('Email already present. Please login or create another account')
+            }
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
     }
 
 
   return (
     <Container>
+        <br/>
           <Signupdiv>
               <Signupdivimg>
                   <Divimg>
@@ -265,7 +257,7 @@ margin-left : 5%;
 `
 const Divimg=styled.div`
 width : 100%;
-height : 230px;
+height : 240px;
 border : 1px solid grey;
 border-radius : 20px;
 margin-bottom : 35px;
@@ -273,7 +265,6 @@ margin-bottom : 35px;
 const Imgdiv=styled.div`
 width : 70%;
 height : 125px;
-// border : 1px solid red;
 margin : 20px auto;
 `
 const Img=styled.img`
@@ -342,7 +333,6 @@ color: #ffffff;
 font-weight: bold;
 text-decoration: none;
 background-color:#f53838;
-// background-color: #d41f1f;
 cursor: pointer;
 margin : 20px;
 border : none;
