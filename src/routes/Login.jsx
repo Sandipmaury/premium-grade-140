@@ -44,12 +44,12 @@ const Login = () => {
     <Container>
       <LoginDiv>
         <Logo
-          src={
-            "http://localhost:3000/static/media/logo.eebab486d12135e36e7f.jpeg"
-          }
+          src=
+            "https://raw.githubusercontent.com/ayushanshu001/shrewd-drink-6002/main/WhatsApp%20Image%202022-11-09%20at%2013.06.04.jpeg"
+          
         ></Logo>
         <Form onSubmit={handleSubmit}>
-          <Input
+          <Input style={{border:'2px solid green'}}
             type={"email"}
             name="email"
             onChange={handleChange}
@@ -57,6 +57,7 @@ const Login = () => {
             required
           ></Input>
           <Input
+          style={{border:'2px solid green'}}
             type={"password"}
             name="password"
             onChange={handleChange}
