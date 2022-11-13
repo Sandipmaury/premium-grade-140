@@ -20,17 +20,16 @@ const Pagination = () => {
   const data=useSelector((store)=>store.MealDataReducer.mealData)
   useEffect(()=>{
     const params={page:page,limit:4}
-    if(category){
+    if(category.length>0){
       params.category=category
     }
-    if(title){
+    if(title.length>0){
       params.title=title
     }
-    if(address){
+    if(address.length>0){
       params.address=address
     }
     setSearchparams(params)
-    console.log("params init",page)
     dispatch(getMealData(params))
 
   },[page])
@@ -41,6 +40,7 @@ const Pagination = () => {
           <p>:</p>
           <button value="1" onClick={(e)=>setPage(+e.target.value)}>1</button>
           <button value="2" onClick={(e)=>setPage(+e.target.value)}>2</button>
+          <button value="3" onClick={(e)=>setPage(+e.target.value)}>3</button>
        
         </div>
         <div className={styles.button}>

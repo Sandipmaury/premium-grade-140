@@ -24,26 +24,63 @@ const MealDealsCart = ({ ele }) => {
         <div className={styles.couponButton}>
           <button className={styles.free_coupon}>Get FREE Coupon</button>
           <div className={styles.stars}>
-            <img
-              src="https://www.kindmeal.my/images/icon_star_grey.png"
-              alt="start-1"
-            />
-            <img
-              src="https://www.kindmeal.my/images/icon_star_grey.png"
-              alt="start-2"
-            />
-            <img
-              src="https://www.kindmeal.my/images/icon_star_grey.png"
-              alt="start-3"
-            />
-            <img
-              src="https://www.kindmeal.my/images/icon_star_grey.png"
-              alt="start-4"
-            />
-            <img
-              src="https://www.kindmeal.my/images/icon_star_grey.png"
-              alt="start-5"
-            />
+            {ele.rating >= 1 ? (
+              <img
+                src="https://www.kindmeal.my/images/icon_star.png"
+                alt="start-1"
+              />
+            ) : (
+              <img
+                src="https://www.kindmeal.my/images/icon_star_grey.png"
+                alt="start-1"
+              />
+            )}
+
+            {ele.rating >= 2 ? (
+              <img
+                src="https://www.kindmeal.my/images/icon_star.png"
+                alt="start-2"
+              />
+            ) : (
+              <img
+                src="https://www.kindmeal.my/images/icon_star_grey.png"
+                alt="start-2"
+              />
+            )}
+
+            {ele.rating >= 3 ? (
+              <img
+                src="https://www.kindmeal.my/images/icon_star.png"
+                alt="start-3"
+              />
+            ) : (
+              <img
+                src="https://www.kindmeal.my/images/icon_star_grey.png"
+                alt="start-3"
+              />
+            )}
+            {ele.rating >= 4 ? (
+              <img
+                src="https://www.kindmeal.my/images/icon_star.png"
+                alt="start-1"
+              />
+            ) : (
+              <img
+                src="https://www.kindmeal.my/images/icon_star_grey.png"
+                alt="start-1"
+              />
+            )}
+            {ele.rating >= 5 ? (
+              <img
+                src="https://www.kindmeal.my/images/icon_star.png"
+                alt="start-1"
+              />
+            ) : (
+              <img
+                src="https://www.kindmeal.my/images/icon_star_grey.png"
+                alt="start-1"
+              />
+            )}
             <p>{`(${ele.review})`}</p>
           </div>
         </div>
@@ -86,7 +123,6 @@ const MealDealsCart = ({ ele }) => {
               alt="contains-2"
             />
           )}
-
         </div>
 
         <div className={styles.discount}>

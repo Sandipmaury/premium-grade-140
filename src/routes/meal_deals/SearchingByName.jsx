@@ -62,30 +62,15 @@ const SearchingByName = () => {
             onChange={(e)=>setAddress(e.target.value)}
           >
             <option value="0">All Locations</option>
-            <option value="">Klang Valley</option>
-            <option value="60">&bull;&nbsp; Kuala Lumpur</option>
-            <option value="42">&bull;&nbsp; Petaling Jaya</option>
-            <option value="20">&bull;&nbsp; Ampang</option>
-            <option value="22">&bull;&nbsp; Bangsar</option>
-            <option value="23">&bull;&nbsp; Bangsar South</option>
-            <option value="69">&bull;&nbsp; Banting</option>
-            <option value="24">&bull;&nbsp; Bukit Bintang</option>
-            <option value="26">&bull;&nbsp; Bukit Damansara</option>
-            <option value="27">&bull;&nbsp; Cheras</option>
-            <option value="29">&bull;&nbsp; Damansara Heights</option>
-            <option value="31">&bull;&nbsp; Damansara Utama</option>
-            <option value="62">&bull;&nbsp; Ipoh</option>
-            <option value="34">&bull;&nbsp; Kepong</option>
-            <option value="35">&bull;&nbsp; Klang</option>
-            <option value="37">&bull;&nbsp; Kota Damansara</option>
-            <option value="39">&bull;&nbsp; Mont Kiara</option>
-            <option value="41">&bull;&nbsp; Old Klang Road</option>
-            <option value="50">&bull;&nbsp; Seri Kembangan</option>
-            <option value="52">&bull;&nbsp; Shah Alam</option>
-            <option value="54">&bull;&nbsp; Sri Petaling</option>
-            <option value="55">&bull;&nbsp; Subang</option>
-            <option value="56">&bull;&nbsp; Taman Desa</option>
-            <option value="58">&bull;&nbsp; Taman Tun</option>{" "}
+            <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kuala Lumpur</option>
+            <option value="Petaling Jaya, Selangor">&bull;&nbsp; Petaling Jaya</option>
+            <option value="Cheras, Kuala Lumpur">&bull;&nbsp; Cheras</option>
+            <option value="Damansara Heights">&bull;&nbsp; Damansara Heights</option>
+            <option value="Damansara Utama">&bull;&nbsp; Damansara Utama</option>
+            <option value="Ipoh">&bull;&nbsp; Ipoh</option>
+            <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kepong</option>
+            <option value="Shah Alam, Selangor">&bull;&nbsp; Shah Alam</option>
+            <option value="Petaling Jaya, Selangor">&bull;&nbsp; Sri Petaling</option>
           </select>
 
           <button className={styles.search_deals} onClick={sortFilter}>Search Deals</button>
