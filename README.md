@@ -33,10 +33,6 @@ graph TD;
 ![Logo](https://i.im.ge/2022/11/13/SrtZYm.home3.png)
 ![Logo](https://i.im.ge/2022/11/13/SrtWUf.recipe.png)
 
-## Live Demo
-
-[![deployed link](https://img.shields.io/badge/Deployed_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://premium-grade-140.vercel.app/)
-
 ## Backend Repo
 
 [![Backend repo](https://img.shields.io/badge/Backend_repo_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Sandipmaury/premium-grade-140-backend)
