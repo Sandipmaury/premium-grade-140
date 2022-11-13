@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Loding } from "../../Components/Loading";
 import styles from "./MealDeals.module.css";
@@ -6,7 +7,11 @@ import MealList from "./MealList";
 import Pagination from "./Pagination";
 import SearchingByName from "./SearchingByName";
 const MealDeals = () => {
+  const isLoading=useSelector((store)=>store.AuthReducer.isLoding)
+  console.log("isLoading",isLoading)
+  
   return (
+    
     <MealDealsWraper>
       <Loding />
       <div className={styles.head_section}>
@@ -44,6 +49,7 @@ const MealDeals = () => {
       <div className={styles.pagination}>
         <Pagination />
       </div>
+  
       <MealsListWraper>
         <MealList />
       </MealsListWraper>
@@ -51,7 +57,7 @@ const MealDeals = () => {
         <Pagination />
       </div>
     </MealDealsWraper>
-  );
+  )
 };
 
 const MealDealsWraper = styled.div`
