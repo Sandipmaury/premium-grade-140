@@ -191,7 +191,7 @@ const Signup = () => {
                                   
                                   padding: "10px",
                                   border : "1px solid lightgrey",
-                                  fontSize: "16px",marginTop:'20px'}}>
+                                  fontSize: "16px",marginTop:'20px',border:'2px solid green'}}>
                                   <option >Select Gender</option>
                                   <option value="male">Male</option>
                                   <option value="female">Female</option>
