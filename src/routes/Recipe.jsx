@@ -6,7 +6,6 @@ import { Flex,  Text } from "@chakra-ui/react";
 import Pagination from "../Components/Pagination";
 import { Input } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
-
 import { getRecipe } from "../redux/RecipeReducer/recipe.actions";
 import { useSearchParams } from "react-router-dom";
 import { Loding } from "../Components/Loading";
@@ -22,25 +21,26 @@ const Recipe = () => {
 
   const [page, setPage] = useState(initialPage || 1);
   const { data  } = useSelector((store) => store.recipeReducer);
-  const loading  =  useSelector((store) => store.recipeReducer.loading);
   const dispatch = useDispatch();
+  const params = {limit:6,page:page }
+  
 
   useEffect(() => {
-      dispatch(getRecipe());  
+  
+  dispatch(getRecipe(params));  
   }, []);
 
   function recipeFilter() {
-   
-    const params = {limit:6,page:page }
-    if(category){
+  
+     if(category){
       params.category = category
     }
     if(title){
-      params.title=title
+      params.q=title
     }
     setSearchparams(params)
     dispatch(getRecipe(params));
-   
+
   }
 
   return (
@@ -116,6 +116,7 @@ const Recipe = () => {
               background={"white"}
               variant="outline"
               width={"300px"}
+              value={title}
               placeholder="Search Recipe"
               size="md"
               onChange={(e) => setTitle(e.target.value)}
@@ -125,7 +126,7 @@ const Recipe = () => {
               name="category"
               background={"white"}
               onChange={(e) => setCategory(e.target.value)}
-            
+              value={category}
               width={"200px"}
             >
               <option value="">All Categories</option>
@@ -215,12 +216,7 @@ const Recipe = () => {
         </SimpleGrid>
 
         <Box m={"20px"} p={"10px"}>
-          <Pagination
-            
-            current={page}
-            onChange={(value) => setPage(value)}
-          >
-            
+          <Pagination>  
           </Pagination>
         </Box>
 
@@ -233,14 +229,12 @@ const Recipe = () => {
           {data &&
             data.map((item) => (
               <Box
-                key={item.id}
+                key={item._id}
                 borderRadius={"5%"}
-                h={"fit-content"}
-                overflow="auto"
                 overflowX={"hidden"}
                 boxShadow={" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
               >
-                <Flex justify={"space-between"} p={"3%"}>
+                <Flex justify={"space-between"} alignItems={"center"} p={"3%"}>
                   <Image
                     src={item.logo}
                     borderRadius={"50%"}
@@ -323,7 +317,7 @@ const Recipe = () => {
               </Box>
             ))}
         </SimpleGrid>
-        <Loding isTrue={loading} />
+        <Loding />
       </Box>
     </Box>
 

@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { SimpleGrid } from "@chakra-ui/react";
-import { Flex, Slider, Text } from "@chakra-ui/react";
-import { FaHeart } from "react-icons/fa";
-import Pagination from "../Components/Pagination";
-import moments from "../moments.json"
-
-const kind = moments.kindmoments
-// console.log(kind)  
+import { Flex, Text } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { getMoment } from "../redux/MomentReducer/moment.actions";
+import { Loding } from "../Components/Loading";
+import { useSearchParams } from "react-router-dom";
+import Pagination1 from "../Components/Pagination1";
 
 const KindMoments = () => {
-  const [page, setPage] = useState(0);
+
+  const [searchParams, setSearchparams] = useSearchParams("");
+  const initialPage = searchParams.get("page");
+  const [page, setPage] = useState(initialPage || 1);
+  const { data } = useSelector((store) => store.momentReducer);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMoment());  
+}, [dispatch]);
+
+
 
   return (
     <Box w={"100%"} h={"100%"}
@@ -106,8 +117,8 @@ KindMoments
         maxW={"1100px"}
       >
          <Box m={"20px"} p={"10px"}>
-        <Pagination
-          total={6}
+        <Pagination1
+         
           current={page}
           onChange={(value) => setPage(value)}
           
@@ -120,12 +131,12 @@ KindMoments
           // border="5px solid purple"
         >
   {/* data from array */}
-  {kind && kind.map((item) =>(
+  {data && data.map((item) =>(
 <Box
             borderRadius={"5%"}
             // h={"60%"}
             height={"fit-content"}
-            key={item.id}
+            key={item._id}
             boxShadow={" rgba(0, 0, 0, 0.35) 0px 5px 15px"}
           >
             <Flex justify={"space-between"} p={"3%"}>
@@ -207,6 +218,7 @@ KindMoments
   ))}
 
 </SimpleGrid>
+<Loding  />
       </Box>
     </Box>
   )                 
