@@ -43,7 +43,7 @@ const Login = () => {
           
         ></Logo>
         <Form onSubmit={handleSubmit}>
-          <Input
+          <Input style={{border:'2px solid green'}}
             type={"email"}
             name="email"
             onChange={handleChange}
@@ -51,6 +51,7 @@ const Login = () => {
             required
           ></Input>
           <Input
+          style={{border:'2px solid green'}}
             type={"password"}
             name="password"
             onChange={handleChange}
