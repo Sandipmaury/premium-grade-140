@@ -1,3 +1,16 @@
 export const IS_AUTH_LODING = "IS_AUTH_LODING";
 export const IS_AUTH_SUCCESS = "IS_AUTH_SUCCESS";
 export const IS_AUTH_FAILURE = "IS_AUTH_FAILURE";
+
+export const SIGNUP_LODING = "SIGNUP_LODING";
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
+
+
+
+export const LOGIN_LODING = "LOGIN_LODING";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAILURE = "LOGIN_FAILURE";
+
+
+
