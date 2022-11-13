@@ -137,8 +137,8 @@ const Signup = () => {
                           <InputP style={{marginLeft : "170px"}}>Last name</InputP>
                            </div>
                           <div style={{ display: "flex" }}>
-                              <Input onChange={handleChange} name="name" type="text" title="First name" required/>
-                              <Input name="lastname" style={{marginLeft:"10px"}} type="text" title="First name"/>
+                              <Input onChange={handleChange} style={{border:'2px solid green'}} name="name" type="text" title="First name" required/>
+                              <Input name="lastname" style={{marginLeft:"10px"}} style={{border:'2px solid green'}} type="text" title="First name"/>
                           </div>
 
                           <br />
@@ -146,17 +146,17 @@ const Signup = () => {
                           <InputP>Your email must be correct to receive activation email</InputP>
                            </div>
                           <div style={{ display: "flex",marginTop:'10px'}}>
-                              <Input onChange={handleChange} name="email" style={{width:"80%"}} type="email" rquired/>
+                              <Input onChange={handleChange} name="email"  style={{width:"80%",border:'2px solid green'}} type="email" rquired/>
                           </div>
 
                           <br />
                           <div style={{ display: "flex",marginTop:'5px'}}>
-                              <Input name="re_enter_email" onChange={handleChange} style={{width:"80%"}} type="text"/>
+                              <Input name="re_enter_email" onChange={handleChange} style={{width:"80%",border:'2px solid green'}} type="text"/>
                           </div>
 
                           <br />
                           <div style={{ display: "flex",marginTop:'15px' }}>
-                              <Input onChange={handleChange} name="password" style={{width:"80%"}} type="password" required/>
+                              <Input onChange={handleChange} name="password"  style={{width:"80%",border:'2px solid green'}} type="password" required/>
                           </div>
 
                           <br />
@@ -164,7 +164,7 @@ const Signup = () => {
                           <InputP>Choose a cool username for your Personal Profile page, comments &amp; reviews</InputP>
                            </div>
                           <div style={{ display: "flex",marginTop:'25px' }}>
-                              <Input onChange={handleChange} name="username" style={{width:"80%"}} type="text" required/>
+                              <Input onChange={handleChange} name="username"  style={{width:"80%",border:'2px solid green'}} type="text" required/>
                           </div>
 
                           <br />
@@ -172,17 +172,17 @@ const Signup = () => {
                           <InputP>Only your age will be publicly visible</InputP>
                            </div>
                           <div style={{ display: "flex",marginTop:'10px' }}>
-                              <Input name="birth" onChange={handleChange} style={{width:"80%"}} type="date" placeholder="Month/Day/Year" required/>
+                              <Input name="birth" onChange={handleChange}  style={{width:"80%",border:'2px solid green'}} type="date" placeholder="Month/Day/Year" required/>
                           </div>
 
                           <br />
                           <div style={{ display: "flex",marginTop:"10px" }}>
-                              <Input name="country" onChange={handleChange} style={{width:"80%"}} type="text" placeholder="Select Country" required/>
+                              <Input name="country" onChange={handleChange}  style={{width:"80%",border:'2px solid green'}} type="text" placeholder="Select Country" required/>
                           </div>
 
                           <br />
                           <div style={{ display: "flex",marginTop:'35px'}}>
-                              <Input name="state" onChange={handleChange} style={{width:"80%"}} type="text" placeholder="Select State" required/>
+                              <Input name="state" onChange={handleChange}  style={{width:"80%",border:'2px solid green'}} type="text" placeholder="Select State" required/>
                           </div>
 
                           <br />
@@ -200,7 +200,7 @@ const Signup = () => {
 
                           <br />
                           <div>
-                              <Input name="profile_photo" onChange={handleChange} style={{width:"80%"}} type="file" placeholder="Select Photo"/>
+                              <Input name="profile_photo"  onChange={handleChange} style={{width:"80%",border:'2px solid green'}} type="file" placeholder="Select Photo"/>
                           </div>
                           <div style={{ display: "flex", margin: "10px 0 0 30px" }}>
                           <input type="checkbox" />
