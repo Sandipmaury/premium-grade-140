@@ -3,32 +3,23 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useSearchParams } from 'react-router-dom';
 import { useState ,useEffect} from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { getRecipe } from '../redux/RecipeReducer/recipe.actions';
+
+import { getMoment } from '../redux/MomentReducer/moment.actions';
 
 
 
-
-function Pagination (){
+function Pagination1 (){
     const [searchParams,setSearchparams]=useSearchParams()
   const initialPage=searchParams.get("page")
   const [page, setPage] = useState(initialPage || 1);
-  let initialCategory=searchParams.get("category")
-  const initialTitle=searchParams.get("title")
  
-
   const dispatch=useDispatch()
-  const {  numberOfPages} = useSelector((store) => store.recipeReducer);
+  const { numberOfPages  } = useSelector((store) => store.momentReducer);
 
   useEffect(()=>{
     const params={ page:page,limit:6 }
-    if(initialCategory){
-      params.category=initialCategory
-    }
-    if(initialTitle){
-      params.q=initialTitle
-    }
     setSearchparams(params)  
-    dispatch(getRecipe(params))
+    dispatch(getMoment(params))
   },[page,dispatch])
 
 
@@ -66,4 +57,4 @@ function Pagination (){
       )
   }
 
-export default Pagination
+export default Pagination1
