@@ -1,13 +1,12 @@
 import React from 'react'
 import { Flex, Box, Image, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const LatestNews = () => {
   return (
     <div>
          <Box
             maxW={"1100px"}
-            // border="2px solid yellow"
             marginTop={"50px"}
             minW={"300px"}
             boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
@@ -40,12 +39,12 @@ export const LatestNews = () => {
             {/* 5images */}
             <Flex justifyContent={"space-between"}>
               <Box width={"200px"} opacity={"1"}>
-                <Link to={""}>
+                <NavLink to={"/productPage"}>
                   <Image
                     borderRadius={"4px"}
                     src="https://scontent-xsp1-2.xx.fbcdn.net/v/t15.5256-10/298969854_601112454850438_5265806124209675410_n.jpg?stp=dst-jpg_p720x720&_nc_cat=109&ccb=1-7&_nc_sid=ad6a45&_nc_ohc=nzSzw7XQGnMAX8O4FOs&_nc_ht=scontent-xsp1-2.xx&edm=ALdPpPkEAAAA&oh=00_AfDiYqjrji0ruViM62MPkODSnrKacA8ZbjeDdr9qCoRrGw&oe=6370D918"
                   />
-                </Link>
+                </NavLink>
                 <Text color={"#888888"} textAlign={"center"} fontSize={"12px"}>
                   Mama And Baby Elephant Get Stuck In & Foot Hole
                 </Text>
