@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
@@ -61,7 +60,7 @@ const SearchingByName = () => {
             className={styles.all_location}
             onChange={(e)=>setAddress(e.target.value)}
           >
-            <option value="0">All Locations</option>
+            <option value="">All Locations</option>
             <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kuala Lumpur</option>
             <option value="Petaling Jaya, Selangor">&bull;&nbsp; Petaling Jaya</option>
             <option value="Cheras, Kuala Lumpur">&bull;&nbsp; Cheras</option>

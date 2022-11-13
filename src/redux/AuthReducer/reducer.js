@@ -34,14 +34,14 @@ export const reducer = (state = initialState, { type, payload }) => {
       case way.SIGNUP_LODING:
         return {
           ...state,
-          isLoading:true,
+          isLoding:true,
         };
 
         case way.SIGNUP_SUCCESS:
           console.log('Success:',payload)
           return {
             ...state,
-            isLoading:false,
+            isLoding:false,
             isError:false,
             register:payload
           }
@@ -49,7 +49,7 @@ export const reducer = (state = initialState, { type, payload }) => {
           case way.SIGNUP_FAILURE:
             return {
               ...state,
-              isLoading:false,
+              isLoding:false,
               isError:true,
 
             }
