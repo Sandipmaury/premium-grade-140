@@ -1,38 +1,12 @@
 
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
 import * as way from './actionType';
+import { IS_AUTH_FAILURE, IS_AUTH_SUCCESS } from "./actionType"
 
-// export const SignupData=(post)=>async(dispatch)=>{
-//     dispatch({type:way.SIGNUP_LODING})
-//    await axios.post('https://saasa-meal.onrender.com/user/register',post)
-//     .then((res)=>{
-//         console.log(res);
-//         dispatch({type:way.SIGNUP_SUCCESS,payload:res.data})})
-//     .catch((err)=>{
-//         console.log(err)
-//         dispatch({type:way.SIGNUP_FAILURE})
-
-//     })
-// }
-
-
-// export const Login_Data=(LoginData)=>async(dispatch)=>{
-//     dispatch({type:way.LOGIN_LODING})
-//     await axios.post('https://saasa-meal.onrender.com/user/login',LoginData)
-//     .then((res)=>{
-//         console.log('Login:',res);
-//         dispatch({type:way.LOGIN_SUCCESS,payload:res.data})})
-//     .catch((err)=>{
-//         console.log('Login:',err)
-//         dispatch({type:way.LOGIN_FAILURE})
-
-//     })
-// }
 
 
 export const SignupData=(post)=>async(dispatch)=>{
-    console.log('action:',post)
+    // console.log('action:',post)
     dispatch({type:way.SIGNUP_LODING})
 
     try {
@@ -44,21 +18,9 @@ export const SignupData=(post)=>async(dispatch)=>{
             }
             })
             let data=await res.json()
-            console.log(data)
+            // console.log(data)
             dispatch({type:way.SIGNUP_SUCCESS,payload:data})
             return data.success
-            // if(data.success==true){
-            //     navigate('/user/login')
-            // }
-            // else if(!data.success){
-            //     alert('Email already exits, Please login with other Email ID')
-            // }
-            // if(data.success==true){
-            //     navigate('/user/login')
-            // }
-            // else{
-            //     alert('Email already exits, Please login with other Email ID')
-            // }
         
 
         } catch (error) {
@@ -80,7 +42,7 @@ export const Login_Data=(LoginData)=>async(dispatch)=>{
             }
             })
             let data=await res.json();
-            console.log(data)
+            // console.log(data)
             dispatch({type:way.LOGIN_SUCCESS,payload:data})
             const success=data.success
             const token=data.data.token
@@ -95,11 +57,6 @@ export const Login_Data=(LoginData)=>async(dispatch)=>{
 }
 
 
-
-
-=======
-import axios from "axios"
-import { IS_AUTH_FAILURE, IS_AUTH_SUCCESS } from "./actionType"
 
 
 export const removeToken = async() =>{
