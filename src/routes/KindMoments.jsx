@@ -9,16 +9,10 @@ import { useSearchParams } from "react-router-dom";
 import Pagination1 from "../Components/Pagination1";
 
 const KindMoments = () => {
-  const [searchParams, setSearchparams] = useSearchParams("");
+  const [searchParams, setSearchparams] = useSearchParams();
   const initialPage = searchParams.get("page");
   const [page, setPage] = useState(initialPage || 1);
-  const { data } = useSelector((store) => store.momentReducer);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMoment());
-  }, [dispatch]);
+  const data = useSelector((store) => store.momentReducer.data);
 
   return (
     <Box
@@ -121,8 +115,6 @@ const KindMoments = () => {
             data.map((item) => (
               <Box
                 borderRadius={"5%"}
-                // h={"60%"}
-                height={"fit-content"}
                 key={item._id}
                 boxShadow={" rgba(0, 0, 0, 0.35) 0px 5px 15px"}
               >
@@ -203,7 +195,9 @@ const KindMoments = () => {
                   </Flex>
                 </Flex>
 
-                <Text p={"3%"}>{item.description}</Text>
+                <Text textAlign="center" p={"3%"}>
+                  {item.description}
+                </Text>
               </Box>
             ))}
         </SimpleGrid>

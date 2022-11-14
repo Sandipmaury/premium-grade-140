@@ -34,20 +34,13 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(SignupData(post))
-      .then((res) => {
-        if (res) {
-          navigate("/user/login");
-        } else {
-          alert(
-            "Email already present. Please login or create another account"
-          );
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(SignupData(post)).then(({ success, message }) => {
+      if (success) {
+        navigate("/user/login");
+      } else {
+        alert(message);
+      }
+    });
   };
 
   return (
@@ -290,7 +283,7 @@ const Signup = () => {
                 />
               </div>
               <div style={{ display: "flex", margin: "10px 0 0 30px" }}>
-                <input type="checkbox" />
+                <input required type="checkbox" />
                 <p style={{ marginLeft: "10px" }}>
                   {" "}
                   I agree to KindMeal.my's Terms &amp; Conditions

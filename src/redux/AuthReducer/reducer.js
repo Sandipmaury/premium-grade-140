@@ -50,32 +50,24 @@ export const reducer = (state = initialState, { type, payload }) => {
         isError: true,
       };
 
-      case way.SIGNUP_LODING:
-        return {
-          ...state,
-          isLoding:true,
-        };
+    case way.SIGNUP_LODING:
+      return {
+        ...state,
+        isLoding: true,
+      };
 
-        case way.SIGNUP_SUCCESS:
-          console.log('Success:',payload)
-          return {
-            ...state,
-            isLoding:false,
-            isError:false,
-            register:payload
-          }
-
-          case way.SIGNUP_FAILURE:
-            return {
-              ...state,
-              isLoding:false,
-              isError:true,
-
+    case way.SIGNUP_SUCCESS:
+      return {
+        ...state,
+        isLoding: false,
+        isError: false,
+        userDetails: payload,
+      };
 
     case way.SIGNUP_FAILURE:
       return {
         ...state,
-        isLoading: false,
+        isLoding: false,
         isError: true,
         userDetails: {},
       };

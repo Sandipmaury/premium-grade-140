@@ -1,13 +1,10 @@
 import axios from "axios";
 import * as way from "./actionType";
-import { IS_AUTH_FAILURE, IS_AUTH_SUCCESS } from "./actionType";
 
 const URL = process.env.REACT_APP_URL;
 
 export const SignupData = (post) => async (dispatch) => {
-  // console.log('action:',post)
   dispatch({ type: way.SIGNUP_LODING });
-
   try {
     let res = await fetch(`${URL}/user/register`, {
       method: "POST",
@@ -17,12 +14,11 @@ export const SignupData = (post) => async (dispatch) => {
       },
     });
     let data = await res.json();
-    // console.log(data)
-    dispatch({ type: way.SIGNUP_SUCCESS, payload: data });
-    return data.success;
+    dispatch({ type: way.SIGNUP_SUCCESS, payload: {} });
+    return data;
   } catch (error) {
-    console.log(error);
-    return false;
+    dispatch({ type: way.SIGNUP_FAILURE, payload: {} });
+    return error.response.data;
   }
 };
 
@@ -37,13 +33,13 @@ export const Login_Data = (LoginData) => async (dispatch) => {
       },
     });
     let data = await res.json();
-    // console.log(data)
-    dispatch({ type: way.LOGIN_SUCCESS, payload: data });
-    const success = data.success;
-    const token = data.data.token;
-    return { success, token };
+    await window.localStorage.setItem("Token", data?.data?.token);
+    dispatch(getUser());
+    return data;
   } catch (error) {
-    console.log(error);
+    dispatch({ type: way.LOGIN_SUCCESS, payload: {} });
+
+    return error.response.data;
   }
 };
 
@@ -51,7 +47,6 @@ export const removeToken = async () => {
   try {
     return await localStorage.removeItem("Token");
   } catch (err) {
-    console.log(err);
     return null;
   }
 };
@@ -67,16 +62,12 @@ export const getUser = () => async (dispatch) => {
     dispatch({ type: way.IS_AUTH_SUCCESS, payload: user.data });
   } catch (err) {
     dispatch({ type: way.IS_AUTH_FAILURE });
-
-    console.log(err);
   }
 };
 
 export const userLogOut = () => async (dispatch) => {
   try {
     await removeToken();
-    dispatch({ type: IS_AUTH_FAILURE, payload: {} });
-  } catch (err) {
-    console.log(err);
-  }
+    dispatch({ type: way.IS_AUTH_FAILURE, payload: {} });
+  } catch (err) {}
 };

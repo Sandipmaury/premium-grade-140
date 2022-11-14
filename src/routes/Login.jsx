@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Login_Data } from "../redux/AuthReducer/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Loding } from "../Components/Loading";
-import { useEffect } from "react";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -25,31 +24,22 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(Login_Data(LoginData))
-      .then((res) => {
-        if (res.success) {
-          window.localStorage.setItem("Token", res.token);
-          navigate("/");
-        } else {
-          alert("Inavlid Creditendials");
-        }
-      })
-      .catch((err) => {
-        alert("Reused Email");
-        console.log(err);
-      });
+    dispatch(Login_Data(LoginData)).then(({ success, message }) => {
+      if (success) {
+        navigate("/");
+      } else {
+        alert(message);
+      }
+    });
   };
 
   return (
     <Container>
       <LoginDiv>
-        <Logo
-          src=
-            "https://raw.githubusercontent.com/ayushanshu001/shrewd-drink-6002/main/WhatsApp%20Image%202022-11-09%20at%2013.06.04.jpeg"
-          
-        ></Logo>
+        <Logo src="https://raw.githubusercontent.com/ayushanshu001/shrewd-drink-6002/main/WhatsApp%20Image%202022-11-09%20at%2013.06.04.jpeg"></Logo>
         <Form onSubmit={handleSubmit}>
-          <Input style={{border:'2px solid green'}}
+          <Input
+            style={{ border: "2px solid green" }}
             type={"email"}
             name="email"
             onChange={handleChange}
@@ -57,7 +47,7 @@ const Login = () => {
             required
           ></Input>
           <Input
-          style={{border:'2px solid green'}}
+            style={{ border: "2px solid green" }}
             type={"password"}
             name="password"
             onChange={handleChange}

@@ -26,7 +26,8 @@ export const getMoment = (params) => async (dispatch) => {
       console.log("Request canceled", thrown.message);
     } else {
       // handle error
+      console.log(thrown);
+      dispatch({ type: GET_MOMENT_ERROR });
     }
-    dispatch({ type: GET_MOMENT_ERROR });
   }
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { getMealData } from "../../redux/MealDealsReducer/action";
 import styles from "./MealDeals.module.css";
@@ -31,6 +31,7 @@ const Pagination = () => {
     setSearchparams(params);
     dispatch(getMealData(params));
   }, [page]);
+
   return (
     <>
       <div className={styles.pageNumber}>
