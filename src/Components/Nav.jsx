@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import NavLogo from "../Assets/logo/logo.jpeg";
 import { Flex, Box, Image, Link, Text } from "@chakra-ui/react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Username } from "./username";
 import { getUser } from "../redux/AuthReducer/actions";
-
-
+import { Loding } from "./Loading";
 export const Nav = () => {
   const navbarLinks = [
     {
@@ -42,24 +41,23 @@ export const Nav = () => {
       title: "Help",
     },
   ];
-
-    const isAuth = useSelector((store)=> store.AuthReducer.isAuth)
-   
-  const dispatch=  useDispatch();
-  
-  useEffect(()=>{
-   dispatch(getUser())
-  },[dispatch])
-
-
+  const isAuth = useSelector((store) => store.AuthReducer.isAuth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
   return (
-
-  
-   <div style={{position:"sticky", top:"0", zIndex:"100"}}>
-      <Box w={"100%"} bg={"white"} >
-        <Box w={"1100px"} bg={"white"} m={"auto"} h={"90px"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
-
-
+    <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
+      <Box w={"100%"} bg={"white"}>
+        <Box
+          w={"1100px"}
+          bg={"white"}
+          m={"auto"}
+          h={"90px"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
           <Box>
             <NavLink to="/">
               <Image h={"80px"} w={"350px"} src={NavLogo} />
@@ -84,101 +82,95 @@ export const Nav = () => {
             </Flex>
           </Box>
           {/* login */}
-          {
-            (!isAuth) ? ( <Box w={"290px"}>
-            <Flex justifyContent={"space-between"}>
-              <NavLink to="/user/login">
-                {" "}
+          {!isAuth ? (
+            <Box w={"290px"}>
+              <Flex justifyContent={"space-between"}>
+                <NavLink to="/user/login">
+                  {" "}
+                  <Box
+                    fontSize={"12px"}
+                    w={"53px"}
+                    h={"25px"}
+                    cursor={"pointer"}
+                    color={"#444444"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                  >
+                    Login
+                  </Box>
+                </NavLink>
                 <Box
-                  fontSize={"12px"}
-                  w={"53px"}
+                  w={"80px"}
                   h={"25px"}
+                  bg={"#35619F"}
                   cursor={"pointer"}
-                  color={"#444444"}
-                  display={"flex"}
                   justifyContent={"center"}
+                  borderRadius={"5px"}
+                  lineHeight={"20px"}
+                  color={"white"}
+                  padding={"2px 2px 2px 2px"}
+                  display={"flex"}
                   alignItems={"center"}
-                >
-                  Login
-                </Box>
-              </NavLink>
-              <Box
-                w={"80px"}
-                h={"25px"}
-                bg={"#35619f"}
-                cursor={"pointer"}
-                justifyContent={"center"}
-                borderRadius={"5px"}
-                lineHeight={"20px"}
-                color={"white"}
-                padding={"2px 2px 2px 2px"}
-                display={"flex"}
-                alignItems={"center"}
-                fontSize={"12px"}
-              >
-                Facebook
-              </Box>
-              <NavLink to={"/user/login"}>
-              <Box
-                w={"80px"}
-                h={"25px"}
-                bg={"#666666"}
-                cursor={"pointer"}
-                justifyContent={"center"}
-                borderRadius={"5px"}
-                lineHeight={"20px"}
-                color={"white"}
-                padding={"2px 2px 2px 2px"}
-                display={"flex"}
-                alignItems={"center"}
-                fontSize={"12px"}
-              >
-                Email
-              </Box>
-              </NavLink>
-              <NavLink to="/user/register">
-                <Box
                   fontSize={"12px"}
-                  w={"53px"}
-                  h={"25px"}
-                  cursor={"pointer"}
-                  border={"1px solid silver"}
-                  borderBottom={"none"}
-                  borderTop={"none"}
-                  borderRight={"none"}
-                  color={"#444444"}
-                  display={"flex"}
-                  justifyContent={"center"}
-                  alignItems={"center"}
                 >
-                  Sign Up
+                  Facebook
                 </Box>
-              </NavLink>
-            </Flex>
-          </Box>) :
-
-          <Username />
-          }
-         
-
-
-
-
-
+                <NavLink to={"/user/login"}>
+                  <Box
+                    w={"80px"}
+                    h={"25px"}
+                    bg={"#666666"}
+                    cursor={"pointer"}
+                    justifyContent={"center"}
+                    borderRadius={"5px"}
+                    lineHeight={"20px"}
+                    color={"white"}
+                    padding={"2px 2px 2px 2px"}
+                    display={"flex"}
+                    alignItems={"center"}
+                    fontSize={"12px"}
+                  >
+                    Email
+                  </Box>
+                </NavLink>
+                <NavLink to="/user/register">
+                  <Box
+                    fontSize={"12px"}
+                    w={"53px"}
+                    h={"25px"}
+                    cursor={"pointer"}
+                    border={"1px solid silver"}
+                    borderBottom={"none"}
+                    borderTop={"none"}
+                    borderRight={"none"}
+                    color={"#444444"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                  >
+                    Sign Up
+                  </Box>
+                </NavLink>
+              </Flex>
+            </Box>
+          ) : (
+            <Username />
+          )}
         </Box>
       </Box>
       {/* 2nd nav */}
-      <Box w={"100%"} bg={"#2bb673"} h={"40px"}>
+      <Box w={"100%"} bg={"#2BB673"} h={"40px"}>
         <Box
           w={"1100px"}
           m={"auto"}
           display={"flex"}
           justifyContent={"space-between"}
           fontSize={"18px"}
-          color={"#ffffff"}
+          color={"#FFFFFF"}
           lineHeight={"40px"}
           alignItems={"center"}
-          bg={"#2bb673"}
+          bg={"#2BB673"}
         >
           {navbarLinks?.map((el, index) => {
             return (
@@ -206,8 +198,7 @@ export const Nav = () => {
           })}
         </Box>
       </Box>
-
+      <Loding />
     </div>
   );
 };
-

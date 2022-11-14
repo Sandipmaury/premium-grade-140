@@ -1,13 +1,21 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Login_Data } from "../redux/AuthReducer/actions";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Loding } from "../Components/Loading";
 
 const Login = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const [LoginData, setLoginData] = useState({});
+  const isAuth = useSelector((store) => store.AuthReducer.isAuth);
+  if (isAuth) {
+    navigate(location.state ? location.state?.pathname : "/", {
+      replace: true,
+    });
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,31 +27,22 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(Login_Data(LoginData))
-      .then((res) => {
-        if (res.success) {
-            window.localStorage.setItem('Token',res.token)
-          navigate("/");
-        } else {
-          alert("Inavlid Creditendials");
-        }
-      })
-      .catch((err) => {
-        alert("Reused Email");
-        console.log(err);
-      });
+    dispatch(Login_Data(LoginData)).then(({ success, message }) => {
+      if (success) {
+        navigate(location.state.pathname, { replace: true });
+      } else {
+        alert(message);
+      }
+    });
   };
 
   return (
     <Container>
       <LoginDiv>
-        <Logo
-          src=
-            "https://raw.githubusercontent.com/ayushanshu001/shrewd-drink-6002/main/WhatsApp%20Image%202022-11-09%20at%2013.06.04.jpeg"
-          
-        ></Logo>
+        <Logo src="https://raw.githubusercontent.com/ayushanshu001/shrewd-drink-6002/main/WhatsApp%20Image%202022-11-09%20at%2013.06.04.jpeg"></Logo>
         <Form onSubmit={handleSubmit}>
-          <Input style={{border:'2px solid green'}}
+          <Input
+            style={{ border: "2px solid green" }}
             type={"email"}
             name="email"
             onChange={handleChange}
@@ -51,7 +50,7 @@ const Login = () => {
             required
           ></Input>
           <Input
-          style={{border:'2px solid green'}}
+            style={{ border: "2px solid green" }}
             type={"password"}
             name="password"
             onChange={handleChange}
@@ -67,6 +66,7 @@ const Login = () => {
           </Link>
         </Bottom>
       </LoginDiv>
+      <Loding />
     </Container>
   );
 };

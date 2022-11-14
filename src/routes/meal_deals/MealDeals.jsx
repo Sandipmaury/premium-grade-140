@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Loding } from "../../Components/Loading";
 import styles from "./MealDeals.module.css";
 import MealList from "./MealList";
 import Pagination from "./Pagination";
@@ -7,6 +8,7 @@ import SearchingByName from "./SearchingByName";
 const MealDeals = () => {
   return (
     <MealDealsWraper>
+      <Loding />
       <div className={styles.head_section}>
         <div className={styles.head_text}>
           <h1>Meat-Free Deals | Restaurants In Malaysia</h1>
@@ -27,7 +29,7 @@ const MealDeals = () => {
         <br />
         <br />
         <div className={styles.searching_div}>
-          <SearchingByName/>
+          <SearchingByName />
         </div>
       </div>
       <div className={styles.arrow}>
@@ -42,6 +44,7 @@ const MealDeals = () => {
       <div className={styles.pagination}>
         <Pagination />
       </div>
+
       <MealsListWraper>
         <MealList />
       </MealsListWraper>
