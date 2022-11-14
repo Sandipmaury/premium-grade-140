@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Login_Data } from "../redux/AuthReducer/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,10 +8,13 @@ import { Loding } from "../Components/Loading";
 const Login = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const [LoginData, setLoginData] = useState({});
   const isAuth = useSelector((store) => store.AuthReducer.isAuth);
   if (isAuth) {
-    return navigate("/");
+    navigate(location.state ? location.state?.pathname : "/", {
+      replace: true,
+    });
   }
 
   const handleChange = (e) => {
@@ -26,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     dispatch(Login_Data(LoginData)).then(({ success, message }) => {
       if (success) {
-        navigate("/");
+        navigate(location.state.pathname, { replace: true });
       } else {
         alert(message);
       }

@@ -64,7 +64,7 @@ const Signup = () => {
             </Imgdiv>
           </Divimg>
           <Divimg>
-            <Para>Why KindMeal?</Para>
+            <Para>Why Saasa Meal?</Para>
             <ul>
               <br />
               <L>Exclusive meat-free deals</L>
@@ -95,7 +95,7 @@ const Signup = () => {
           </p>
           <br />
           <p style={{ fontSize: "14px" }}>
-            KindMeal is a fun, exciting and cool new way for you to show your
+            Saasa Meal is a fun, exciting and cool new way for you to show your
             compassion towards animals. We collaborate with kind restaurants and
             cafes across the nation to bring you delicious meat-free foods that
             will not only help save precious animal lives, but improve your
@@ -286,7 +286,7 @@ const Signup = () => {
                 <input required type="checkbox" />
                 <p style={{ marginLeft: "10px" }}>
                   {" "}
-                  I agree to KindMeal.my's Terms &amp; Conditions
+                  I agree to Saasa Meal's Terms &amp; Conditions
                 </p>
               </div>
               <Input
