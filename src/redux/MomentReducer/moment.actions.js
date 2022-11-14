@@ -1,35 +1,33 @@
 import axios from "axios";
 import {
-  GET_RECIPE_LOADING,
-  GET_RECIPE_ERROR,
-  GET_RECIPE_SUCCESS,
-} from "./recipe.types";
+  GET_MOMENT_LOADING,
+  GET_MOMENT_ERROR,
+  GET_MOMENT_SUCCESS,
+} from "./moment.types";
 
 const URL = process.env.REACT_APP_URL;
 
-export const getRecipe = (params) => async (dispatch) => {
-  dispatch({ type: GET_RECIPE_LOADING });
+export const getMoment = (params) => async (dispatch) => {
+  dispatch({ type: GET_MOMENT_LOADING });
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
 
   try {
-    let response = await axios.get(`${URL}/recipes`, {
+    let response = await axios.get(`${URL}/moments`, {
       headers: {
         token: localStorage.getItem("Token"),
       },
       cancelToken: source.token,
       params: params,
     });
-
-    dispatch({ type: GET_RECIPE_SUCCESS, payload: response.data });
-
-    // return response.data.data;
+    dispatch({ type: GET_MOMENT_SUCCESS, payload: response.data });
   } catch (thrown) {
     if (axios.isCancel(thrown)) {
       console.log("Request canceled", thrown.message);
     } else {
       // handle error
+      console.log(thrown);
+      dispatch({ type: GET_MOMENT_ERROR });
     }
-    dispatch({ type: GET_RECIPE_ERROR });
   }
 };

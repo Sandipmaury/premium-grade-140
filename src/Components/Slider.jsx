@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
-import Slider from 'react-slick';
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import Slider from "react-slick";
 
 // Settings for the slider
 const settings = {
@@ -18,27 +18,28 @@ const settings = {
 export default function Carousel() {
   // As we have used custom buttons, we need a reference variable to
   // change the state
-  const [slider, setSlider] = React.useState(<Slider/>|| null);
+  const [slider, setSlider] = React.useState(<Slider /> || null);
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-//  
+  //
 
   // These are the images used in the slide
   const cards = [
-    'https://www.kindmeal.my/photos/deal/6/628-4921-m.jpg',
-    'https://www.kindmeal.my/photos/deal/6/644-3810-m.jpg',
-    'https://www.kindmeal.my/photos/deal/6/657-4063-m.jpg',
-    'https://www.kindmeal.my/photos/deal/6/679-4332-m.jpg',
-    'https://www.kindmeal.my/photos/deal/7/704-4734-m.jpg'
+    "https://www.kindmeal.my/photos/deal/6/628-4921-m.jpg",
+    "https://www.kindmeal.my/photos/deal/6/644-3810-m.jpg",
+    "https://www.kindmeal.my/photos/deal/6/657-4063-m.jpg",
+    "https://www.kindmeal.my/photos/deal/6/679-4332-m.jpg",
+    "https://www.kindmeal.my/photos/deal/7/704-4734-m.jpg",
   ];
 
   return (
     <Box
-      position={'relative'}
-      height={'350px'}
-      width={'750px'}
-      overflow={'hidden'}>
+      position={"relative"}
+      height={"350px"}
+      width={"750px"}
+      overflow={"hidden"}
+    >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -52,13 +53,13 @@ export default function Carousel() {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       {/* Left Icon */}
-     
+
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={'350px'}
+            height={"350px"}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

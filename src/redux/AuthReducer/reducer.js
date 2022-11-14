@@ -7,10 +7,8 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isLoding: true,
-        isError: false,
-        isAuth: false,
-        userDetails: {},
       };
+
     case way.IS_AUTH_SUCCESS:
       return {
         ...state,
@@ -19,13 +17,59 @@ export const reducer = (state = initialState, { type, payload }) => {
         isError: false,
         isLoding: false,
       };
+
     case way.IS_AUTH_FAILURE:
       return {
         ...state,
-        userDetails: payload,
+        userDetails: {},
         isAuth: false,
         isLoding: false,
         isError: true,
+      };
+    case way.LOGIN_LODING:
+      return {
+        ...state,
+        isLoding: true,
+      };
+
+    case way.LOGIN_SUCCESS:
+      return {
+        ...state,
+        userDetails: payload,
+        isAuth: true,
+        isError: false,
+        isLoding: false,
+      };
+
+    case way.LOGIN_FAILURE:
+      return {
+        ...state,
+        userDetails: {},
+        isAuth: false,
+        isLoding: false,
+        isError: true,
+      };
+
+    case way.SIGNUP_LODING:
+      return {
+        ...state,
+        isLoding: true,
+      };
+
+    case way.SIGNUP_SUCCESS:
+      return {
+        ...state,
+        isLoding: false,
+        isError: false,
+        userDetails: payload,
+      };
+
+    case way.SIGNUP_FAILURE:
+      return {
+        ...state,
+        isLoding: false,
+        isError: true,
+        userDetails: {},
       };
     default:
       return state;
