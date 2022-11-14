@@ -15,9 +15,7 @@ export const Error = () => {
       py="100px"
     >
       <BiError />
-      <Text fontSize="2xl">
-        This page is not build yet. Please visit later.
-      </Text>
+      <Text fontSize="2xl">Something went wrong. Please visit later.</Text>
     </Flex>
   );
 };

@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Username } from "./username";
 import { getUser } from "../redux/AuthReducer/actions";
+import { Loding } from "./Loading";
 export const Nav = () => {
   const navbarLinks = [
     {
@@ -44,7 +45,7 @@ export const Nav = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
-  }, [dispatch, isAuth]);
+  }, []);
   return (
     <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
       <Box w={"100%"} bg={"white"}>
@@ -197,6 +198,7 @@ export const Nav = () => {
           })}
         </Box>
       </Box>
+      <Loding />
     </div>
   );
 };
