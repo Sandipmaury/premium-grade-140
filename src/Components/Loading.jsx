@@ -7,7 +7,7 @@ export const Loding = () => {
   const loading1 = useSelector((store) => store.momentReducer.loading);
   const isLoading = useSelector((store) => store.AuthReducer.isLoding);
   const isLoading1 = useSelector((store) => store.MealDataReducer.isLoading);
-
+  
   return (
     <Modal isCentered isOpen={loading || isLoading || loading1 || isLoading1}>
       <ModalOverlay />

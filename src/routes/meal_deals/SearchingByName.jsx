@@ -1,9 +1,10 @@
-import React from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSearchParams } from "react-router-dom";
-import { getMealData } from "../../redux/MealDealsReducer/action";
-import styles from "./MealDeals.module.css";
+import React from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
+import { getMealData } from '../../redux/MealDealsReducer/action'
+import styles from "./MealDeals.module.css"
+
 const SearchingByName = () => {
   const [searchParams, setSearchparams] = useSearchParams("");
   const getByPage = searchParams.get("page");
@@ -59,29 +60,24 @@ const SearchingByName = () => {
         <option value="cute">Cute</option>
       </select>
 
-      <select
-        name="searchLocation"
-        id="searchLocation"
-        className={styles.all_location}
-        onChange={(e) => setAddress(e.target.value)}
-      >
-        <option value="0">All Locations</option>
-        <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kuala Lumpur</option>
-        <option value="Petaling Jaya, Selangor">
-          &bull;&nbsp; Petaling Jaya
-        </option>
-        <option value="Cheras, Kuala Lumpur">&bull;&nbsp; Cheras</option>
-        <option value="Damansara Heights">
-          &bull;&nbsp; Damansara Heights
-        </option>
-        <option value="Damansara Utama">&bull;&nbsp; Damansara Utama</option>
-        <option value="Ipoh">&bull;&nbsp; Ipoh</option>
-        <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kepong</option>
-        <option value="Shah Alam, Selangor">&bull;&nbsp; Shah Alam</option>
-        <option value="Petaling Jaya, Selangor">
-          &bull;&nbsp; Sri Petaling
-        </option>
-      </select>
+          <select
+            name="searchLocation"
+            id="searchLocation"
+            className={styles.all_location}
+            onChange={(e)=>setAddress(e.target.value)}
+          >
+            <option value="">All Locations</option>
+            <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kuala Lumpur</option>
+            <option value="Petaling Jaya, Selangor">&bull;&nbsp; Petaling Jaya</option>
+            <option value="Cheras, Kuala Lumpur">&bull;&nbsp; Cheras</option>
+            <option value="Damansara Heights">&bull;&nbsp; Damansara Heights</option>
+            <option value="Damansara Utama">&bull;&nbsp; Damansara Utama</option>
+            <option value="Ipoh">&bull;&nbsp; Ipoh</option>
+            <option value="Kepong, Kuala Lumpur">&bull;&nbsp; Kepong</option>
+            <option value="Shah Alam, Selangor">&bull;&nbsp; Shah Alam</option>
+            <option value="Petaling Jaya, Selangor">&bull;&nbsp; Sri Petaling</option>
+          </select>
+
 
       <button className={styles.search_deals} onClick={sortFilter}>
         Search Deals
